@@ -1,0 +1,206 @@
+.skillate-cat-layout-1 {
+    .skillate-course-category-list {
+        border-radius: 3px;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.11);
+        border: solid 1px #e7e8eb;
+        background-color: #ffffff;
+        min-height: 82px;
+        padding: 16px 25px 16px 15px;
+        transition: 400ms;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        .cat-image {
+            text-align: center;
+            border-radius: 4px;
+            img {
+                transition: 1s ease all;
+                filter: grayscale(1) brightness(.5);
+            }
+        }
+        .course-count {
+            text-align: right;
+            color: #797c7f;
+            font-size: 16px;
+        }
+        .single-course-categories {
+            transition: .3s;
+        }
+        &:hover{
+            .cat-image {
+                img {
+                    filter: grayscale(0) brightness(1);
+                }
+            }
+        }
+        a.course-cat-link-full{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 9;
+        }
+        &:hover{
+            box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.11);
+        }
+        
+    }
+}
+
+.skillate-cat-layout-2 {
+    .cat-image{
+        overflow: hidden;
+        img{
+            transition: all .4s;
+        }
+    }
+    &:hover{
+        .cat-image{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+    .skillate-course-category-list {
+        border-radius: 3px;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.11);
+        text-align: center;
+        transition: .3s;
+        padding: 20px;
+    }
+    .single-course-categories {
+        display: inline-block;
+        width: 100%;
+        font-family: Lato;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: -0.11px;
+        text-align: center;
+        color: #1f2949;
+    }
+    .skillate-course-category-list:hover {
+        border-radius: 3px;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.18);
+        background-color: #ffffff;
+    }
+}
+
+.category-type-2 .skillate-cat-layout-2{
+    .skillate-course-category-list{
+        .cat-image img{
+            filter: brightness(0) invert(1);
+        }
+        &:hover{
+            .cat-image{
+                img{
+                    filter: brightness(0) invert(0);
+                }
+            }
+        }
+    }
+}
+
+/* Home -> Testimonial */
+.skillate-custom-testimonial {
+    border-radius: 3px;
+}
+.skillate-custom-testimonial .qubely-testimonial-content {
+    font-style: italic;
+    color: #1f2949;
+    border-radius: 0 0 3px 3px;
+}
+.skillate-custom-testimonial .qubely-testimonial-avatar-layout-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skillate-custom-testimonial .qubely-testimonial-author-info {
+    text-align: left !important;
+}
+.skillate-custom-testimonial .qubely-testimonial-avatar {
+    margin: 0 -12px 0px 0;
+}
+.skillate-custom-testimonial .qubely-testimonial-author {
+    background: #fff;
+    padding: 0px 30px 0px 24px;
+}
+.skillate-custom-testimonial .qubely-testimonial-content {
+    padding: 35px 30px 0px 30px;
+}
+.skillate-custom-testimonial .qubely-testimonial-avatar {
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.skillate-cat-layout-3 .cat-image {
+    display: inline-block;
+    float: left;
+    margin-right: 28px;
+    width: 82px;
+    line-height: 0;
+}
+.skillate-cat-layout-3 .skillate-course-category-list {
+    display: inline-block;
+    width: 100%;
+}
+
+.skillate-cat-layout-3 .skillate-course-category-list {
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.11);
+    background-color: #ffffff;
+}
+.skillate-cat-layout-3 .skillate-course-category-list span {
+    position: absolute;
+    margin-top: 0;
+    width: auto;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+.tutor-course-grid-item.col-md-12.col-6 {
+    line-height: 0;;
+}
+
+.all-category {
+    .view-all-category {
+        border-radius: 3px;
+        border: 1px solid #dadce0;
+        width: 100%;
+        height: 46px;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 45px;
+        letter-spacing: normal;
+        color: #ff5248;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        -webkit-transition: all .4s;
+        transition: all .4s;
+    }
+    .view-all-category:hover {
+        background: #ff5248;
+        color: #ffffff;
+    }
+}
+
+
+.category-btn.enable {
+    display: block;
+}
+.category-btn {
+    display: none;
+}
+
+@media (max-width: 767px) { 
+    .category-btn {
+        display: block;
+    }
+}

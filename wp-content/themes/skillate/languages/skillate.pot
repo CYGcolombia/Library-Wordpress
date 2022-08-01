@@ -1,0 +1,700 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-06-06 16:39+0600\n"
+"PO-Revision-Date: 2022-06-06 16:39+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:81 comments.php:84 comments.php:85
+msgid "Comments"
+msgstr ""
+
+#: comments.php:84 lib/main-function/skillate-core.php:164
+#: lib/main-function/skillate-core.php:169
+msgid "Prev"
+msgstr ""
+
+#: comments.php:85 lib/main-function/skillate-core.php:164
+#: lib/main-function/skillate-core.php:170
+msgid "Next"
+msgstr ""
+
+#: header.php:516
+msgid "Select Your Favourite<br> <strong>Category</strong> And Start Learning."
+msgstr ""
+
+#: js/main.js:599
+msgid "Rating and review required"
+msgstr ""
+
+#: js/main.js:615
+msgid "Thank You for Rating This Course!"
+msgstr ""
+
+#: js/main.js:616
+msgid "Your rating will now be visible in the course page"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2358
+msgid "Required"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2361
+msgid "Recommended"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2377
+msgid "WordPress Repository"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2380
+msgid "External Source"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2383
+msgid "Pre-Packaged"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2400
+msgid "Not Installed"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2404
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2406
+msgid "Active"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2412
+msgid "Required Update not Available"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2415
+msgid "Requires Update"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2418
+msgid "Update recommended"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2575
+msgid "Installed version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2583
+msgid "Minimum required version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2595
+msgid "Available version:"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2632
+msgid "Plugin"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2633
+msgid "Source"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2634
+msgid "Type"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2638
+msgid "Version"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2639
+msgid "Status"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2688
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2693
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2699
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2802
+msgid "Install"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2808
+msgid "Update"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2811
+msgid "Activate"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2842
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2844
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2885
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:2887
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3246
+msgid "Plugin activation failed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3247
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3586
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3589
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3591
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3595
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3597
+#: lib/class-tgm-plugin-activation.php:3605
+#, php-format
+msgid "%1$s done."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3598
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3600
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3603
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3606
+msgid "All installations have been completed."
+msgstr ""
+
+#: lib/class-tgm-plugin-activation.php:3608
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: lib/course-archive-top-carousel.php:48 lib/course-archive-top.php:49
+#: lib/single-related-post.php:57
+msgid "Featured"
+msgstr ""
+
+#: lib/course-archive-top-carousel.php:103 lib/shortcode/course-archive.php:473
+msgid "Start Learning"
+msgstr ""
+
+#: lib/course-archive-top-carousel.php:109 lib/course-archive-top.php:101
+#: lib/shortcode/course-archive.php:481 lib/single-related-post.php:110
+msgid "Enrolled"
+msgstr ""
+
+#: lib/course-archive-top-carousel.php:111 lib/course-archive-top.php:103
+#: lib/course-cat.php:127 lib/shortcode/course-archive.php:483
+#: lib/single-related-post.php:112
+msgid "Enroll Now"
+msgstr ""
+
+#: lib/course-cat.php:222 lib/shortcode/course-archive.php:598
+msgid "Nothing found!"
+msgstr ""
+
+#: lib/course-cat.php:223 lib/shortcode/course-archive.php:599
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different terms."
+msgstr ""
+
+#: lib/main-function/skillate-core.php:9
+msgid "Main Menu"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:52
+msgid "small"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:53
+msgid "S"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:58
+msgid "regular"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:59
+msgid "M"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:64
+msgid "large"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:65
+msgid "L"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:70
+msgid "larger"
+msgstr ""
+
+#: lib/main-function/skillate-core.php:71
+msgid "XL"
+msgstr ""
+
+#: lib/main-function/skillate-register.php:161
+msgid "Sending user info, please wait..."
+msgstr ""
+
+#: lib/shortcode/course-archive.php:162
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: lib/shortcode/course-archive.php:170 lib/shortcode/course-archive.php:403
+#, php-format
+msgid "Viewing %s Courses of %s"
+msgstr ""
+
+#: lib/shortcode/course-archive.php:392
+msgid "Newest Item"
+msgstr ""
+
+#: lib/shortcode/course-archive.php:393
+msgid "Oldest Item"
+msgstr ""
+
+#: lib/shortcode/course-archive.php:394
+msgid "Course Title (a-z)"
+msgstr ""
+
+#: lib/shortcode/course-archive.php:395
+msgid "Course Title (z-a)"
+msgstr ""
+
+#: lib/shortcode/course-archive.php:458
+msgid "View Course"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:10
+#: lib/shortcode/pmpro/templates/levels-table.php:19
+msgid "Level"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:25
+#: lib/shortcode/pmpro/templates/levels-table.php:21
+#: woocommerce/cart/cart.php:36
+msgid "Price"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:37
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:43
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:343
+#: lib/shortcode/pmpro/templates/levels-div.php:105
+#: lib/shortcode/pmpro/templates/levels-div.php:290
+msgid "Free"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:60
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:237
+#: lib/shortcode/pmpro/templates/levels-table.php:24
+msgid "Expiration"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:69
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:246
+msgid "Membership never expires."
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:258
+msgid "More Information"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:337
+#: lib/shortcode/pmpro/templates/levels-div.php:99
+#: lib/shortcode/pmpro/templates/levels-div.php:284
+msgid "Free."
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels-compare_table.php:470
+#: lib/shortcode/pmpro/templates/levels-div.php:129
+#: lib/shortcode/pmpro/templates/levels-div.php:323
+#: lib/shortcode/pmpro/templates/levels-div.php:437
+#: lib/shortcode/pmpro/templates/levels-table.php:66
+msgid "Membership Never Expires."
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels.php:17
+msgid "Your&nbsp;Level"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels.php:21
+msgid "Select"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels.php:30
+msgid "Renew"
+msgstr ""
+
+#: lib/shortcode/pmpro/templates/levels.php:60
+msgid "Read More"
+msgstr ""
+
+#: lib/single-related-post.php:61
+msgid "New"
+msgstr ""
+
+#: lib/skillate_comment.php:48
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: lib/skillate_comment.php:54
+msgid "Edit"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:114
+msgid "Account Information"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:116
+msgid "Already have an account?"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:116
+msgid "Log in here"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:119
+msgid "Username"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:128
+#: paid-memberships-pro/pages/checkout.php:333
+msgid "E-mail Address"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:136
+msgid "Retype E-mail Address"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:149
+msgid "Password"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:157
+msgid "Retype Passwrod"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:172
+msgid "Full Name"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:173
+msgid "LEAVE THIS BLANK"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:192
+#, php-format
+msgid ""
+"You are logged in as <strong>%s</strong>. If you would like to use a "
+"different account for this membership, <a href=\"%s\">log out now</a>."
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:208
+msgid "Choose your Payment Method"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:213
+msgid "Check Out with a Credit Card Here"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:217
+msgid "Check Out with PayPal"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:229
+msgid "Billing Address"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:233
+msgid "First Name"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:237
+msgid "Last Name"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:241
+msgid "Address 1"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:245
+msgid "Address 2"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:252
+msgid "City"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:256
+msgid "State"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:260
+msgid "Postal Code"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:265
+msgid "City, State Zip"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:302
+msgid "Country"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:318
+msgid "Phone"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:340
+msgid "Confirm E-mail"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:365
+msgid "Payment Information"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:368
+#, php-format
+msgid "We Accept %s"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:380
+msgid "Card Type"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:416
+msgid "Card Number"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:423
+msgid "Expiration Date"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:459
+msgid "CVC "
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:460
+msgid "what's this?"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:529
+#, php-format
+msgid "I agree to the %s"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:548
+msgid "Complete Payment"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:560
+msgid "Get Started"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:560
+msgid "Submit and Confirm"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:570
+msgid "Processing..."
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:578
+msgid ""
+"Almost done. Review the membership information and pricing below then "
+"<strong>click the \"Complete Payment\" button</strong> to finish your order."
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:588
+#, php-format
+msgid "<strong>%s</strong>"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:591
+msgid "change"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:596
+#, php-format
+msgid ""
+"You have selected the <strong>%s</strong> membership level.Can you guarantee "
+"how much money your store is going to make this month? If you offered "
+"subscription-based products."
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:641
+#, php-format
+msgid ""
+"<p class=\"pmpro_level_discount_applied\">The <strong>%s</strong> code has "
+"been applied to your order.</p>"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:659
+msgid "Click here to change your discount code."
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:661
+msgid "Do you have a discount code?"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:663
+#: paid-memberships-pro/pages/checkout.php:685
+msgid "Discount Code"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:675
+msgid "Apply Code"
+msgstr ""
+
+#: paid-memberships-pro/pages/checkout.php:687
+msgid "Apply"
+msgstr ""
+
+#: tutor/single-course-enrolled.php:193 tutor/single-course.php:447
+msgid "Instructor"
+msgstr ""
+
+#: tutor/single-course-enrolled.php:213 tutor/single-course.php:469
+msgid "/5"
+msgstr ""
+
+#: tutor/single-course-enrolled.php:230 tutor/single-course.php:486
+msgid "Courses"
+msgstr ""
+
+#: tutor/single-course.php:528
+msgid "Announcements"
+msgstr ""
+
+#: tutor/single-course.php:535
+msgid "Attachments"
+msgstr ""
+
+#: tutor/single-course.php:548
+msgid "Question & Answer"
+msgstr ""
+
+#: tutor/single-course.php:565
+msgid "This feature has been disabled by the administrator"
+msgstr ""
+
+#: tutor/single/course/course-topics.php:26
+msgid "Course content"
+msgstr ""
+
+#: tutor/student-public-profile.php:127
+#, php-format
+msgid "%d Reviews"
+msgstr ""
+
+#: updater/update.php:246
+#, php-format
+msgid ""
+"There is an error with your %s License. Automatic update has been turned "
+"off, %s Please check license %s"
+msgstr ""
+
+#: woocommerce/cart/cart.php:35
+msgid "Product"
+msgstr ""
+
+#: woocommerce/cart/cart.php:37
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/cart/cart.php:38
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart.php:60
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:138
+msgid "Coupon:"
+msgstr ""
+
+#: woocommerce/single-product/related.php:19
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/single-product/review.php:28
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:37
+msgid "verified owner"
+msgstr ""
+
+#: woocommerce/single-product/review.php:46
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:47
+msgid "out of 5"
+msgstr ""

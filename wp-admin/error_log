@@ -1,0 +1,8 @@
+[29-Jul-2022 21:07:52 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in /home/cygcrjxp/public_html/wordpress/wp-admin/includes/class-theme-upgrader.php on line 160
+[29-Jul-2022 21:20:21 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/cygcrjxp/public_html/wordpress/wp-includes/script-loader.php:2750) in /home/cygcrjxp/public_html/wordpress/wp-includes/pluggable.php on line 1421
+[29-Jul-2022 21:20:21 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/cygcrjxp/public_html/wordpress/wp-includes/script-loader.php:2750) in /home/cygcrjxp/public_html/wordpress/wp-includes/pluggable.php on line 1424
+[29-Jul-2022 21:21:10 UTC] Error Table 'cygcrjxp_enciclopedia.wp_gamipress_user_earnings' doesn't exist de la base de datos de WordPress para la consulta SELECT COUNT(*) 
+            FROM wp_gamipress_user_earnings AS ue 
+            LEFT JOIN wp_gamipress_user_earnings_meta uem ON ( uem.user_earning_id = ue.user_earning_id AND uem.meta_key = '_gamipress_parent_post_type'  ) 
+            WHERE ue.post_type IN ( 'points-award', 'points-deduct', 'step', 'rank-requirement' ) 
+            AND uem.meta_value IS NULL realizada por require_once('wp-admin/admin.php'), do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, gamipress_process_upgrades, apply_filters('gamipress_process_upgrades'), WP_Hook->apply_filters, gamipress_237_upgrades, gamipress_237_upgrade_size

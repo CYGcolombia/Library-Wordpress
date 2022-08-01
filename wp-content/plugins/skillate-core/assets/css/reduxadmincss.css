@@ -1,0 +1,8 @@
+.updated.redux-message.redux-notice.notice.is-dismissible.redux-notice,
+.redux-container #redux-header .rAds,
+#dashboard-widgets #redux_dashboard_widget,
+#customize-theme-controls #redux_rAds {
+	display: none !important;
+	visibility: hidden;
+}
+

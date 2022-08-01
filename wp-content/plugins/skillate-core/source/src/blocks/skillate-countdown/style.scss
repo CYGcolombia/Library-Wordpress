@@ -1,0 +1,117 @@
+.skillate-home-countdown-content {
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.11);
+    background-color: #ffffff;
+    padding: 53px 58px 40px 48px;
+
+    .skillate-home-countdown-header {
+        margin-bottom: 36px;
+    }
+
+    .skillate-home-countdown-wrapper {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-wrap: wrap;
+        .skillate-home-countdown-title {
+            h3 {
+                font-family: "Open Sans", sans-serif;
+                font-size: 30px;
+                font-weight: 400;
+                letter-spacing: -0.17px;
+                color: #1f2949;
+                margin-top: 0px !important;
+                margin-bottom: 20px !important;
+                span {
+                    font-weight: 700;
+                }
+            }
+        } 
+    }
+
+    .skillate-home-countdown-body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: -0.09px;
+        color: #797c7f;
+    }
+
+    .skillate-home-countdown-item {
+        .number {
+            h4 {
+                font-family: "Open Sans", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                letter-spacing: -0.13px;
+                color: #1f2949;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+        } 
+        .text {
+            h5 {
+                font-size: 14px;
+                letter-spacing: -0.08px;
+                color: #b0b4b8;
+                margin: 0;
+                font-weight: 600;
+            }
+        } 
+    } 
+
+    .skillate-home-countdown-cta-btn {
+        text-align: right;
+        .btn-primary {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            padding: 12px 30px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            border-radius: 3px;
+            background-color: #ff5248;
+            transition: .3s all ease;
+        }
+        .btn-primary:hover {
+            background-color: #ff5248;
+        }
+    }
+
+}
+
+
+.skillate-home-countdown-title h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.editor-styles-wrapper .skillate-home-countdown-title h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media(max-width: 767px){
+    .skillate-home-countdown-content{
+        padding: 30px !important;
+        .skillate-home-countdown-cta-btn{
+            a{
+                display: block;
+                height: 36px !important;
+                line-height: 36px;
+                font-size: 14px;
+                margin-top: 20px;
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

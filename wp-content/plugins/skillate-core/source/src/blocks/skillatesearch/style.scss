@@ -1,0 +1,158 @@
+.skillate-form-search-wrapper {
+    position: relative;
+    .skillate-coursesearch-input {
+        border-radius: 3px;
+        height: 58px;
+        border: none;
+        padding: 20px 20px 20px 54px !important;
+        width: calc(100% - 140px);
+    } 
+    .skillate-search-wrapper.search.spinner{
+        img {
+            display: none;
+        }
+    } 
+    .skillate-search-wrapper.search {
+        position: relative;
+        .skillate-course-search-icons {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translate(20px,-50%);
+            transform: translate(20px,-50%);
+            line-height: 0;
+        }
+        i.fa.fa-spinner.fa-spin {
+            font-size: 20px;
+        }
+        button {
+            width: 115px;
+            height: 58px;
+            border-radius: 3px;
+            border: none;
+            margin-left: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all .4s;
+            i.fa-search{
+                display: none;
+            }
+            img{
+                width: 20px;
+            }
+            position: relative;
+            top: -1px;
+        }
+    }
+    .skillate-search-wrapper.search.search-layout-1{
+        .skillate-coursesearch-input {
+            padding: 20px 0 !important;
+            width: 100%;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid #fff;
+            border-radius: 0 !important;
+            margin-bottom: 30px;
+        }
+        i.fa.fa-spinner.fa-spin {
+            font-size: 20px;
+
+        }
+        button {
+            position: absolute;
+            top: 4px;
+            right: 0;
+            z-index: 99999;
+            margin-left: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 3px;
+            background: transparent !important;
+            transition: all .4s;
+        }
+        .skillate-course-search-icons {
+            position: absolute;
+            top: 37%;
+            -webkit-transform: translate(20px,-50%);
+            transform: translate(0, -50%);
+            line-height: 0;
+            right: 16px;
+            font-size: 22px;
+            color: #fff;
+        }
+    }
+
+    .skillate-course-search-results {
+        position: absolute;
+        width: 100%;
+        top: 63px;
+        z-index: 9;
+        ul {
+            background: #fff;
+            width: calc(100% - 140px);
+            border-radius: 3px;
+            margin: 0;
+            padding: 0;
+            li{
+                display: block;
+                padding: 12px;
+                margin: 0;
+                border-bottom: 1px solid #cdcdcd;
+                a {
+                    font-family: "Open Sans";
+                    font-size: 16px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: -0.46px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
+.skillate-form-search-wrapper.layout-1 {
+    .skillate-course-search-results {
+        ul {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width:767px){
+    .skillate-form-search-wrapper {
+        .skillate-search-wrapper{
+            .skillate-course-search-icons{
+                display: none;
+            }
+            .skillate-coursesearch-input{
+                padding: 10px 20px !important;
+                width: 100% !important;
+                height: 48px;
+            }
+            button{
+                position: absolute !important;
+                right: 0;
+                height: 48px !important;
+                top: 0 !important;
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+                width: 46px !important;
+                font-size: 0 !important;
+                i.fa-search{
+                    display: block !important;
+                    font-size: 20px;
+                }
+            }
+        }
+        .skillate-course-search-results{
+            ul{
+                width: 100%;
+            }
+        }
+    }
+}

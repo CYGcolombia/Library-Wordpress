@@ -1,0 +1,408 @@
+/* Tab (Vertical menu) */
+.skillate-courses-tab-wrapper.tab-horizontal {
+	.skillate-related-course {
+		padding: 39px 0 27px 0;
+	}
+	.tutor-course-grid-enroll {
+		.course-related-hover-price {
+			.price {
+				font-size: 24px;
+				font-weight: 600;
+				color: #fff;
+				margin-bottom: 15px;
+				text-decoration: none;
+			}
+		}
+	}
+}
+.skillate-tab-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: none;
+}
+.skillate-tab-nav-link {
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	line-height: 2.88;
+	letter-spacing: -0.09px;
+	text-align: center;
+	color: #1f2949;
+	transition: .4s all ease;
+	&:focus {
+		outline: none;
+	}
+}
+.skillate-tab-nav-link.active {
+	color: #0352cc;
+	transition: .4s all ease;
+}
+.tab-horizontal {
+	.skillate-tab-nav-item {
+		margin: 0px 28px;
+	}
+}
+.skillate-tab-nav-item {
+	&:first-child {
+		margin-left: 0;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.tutor-course-overlay-element {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 17px 12px;
+	z-index: 1;
+	.level-tag {
+		.tag {
+			padding: 2px 7px;
+			border-radius: 2px;
+			background-color: #5cc323;
+			&:not(:first-child) {
+				margin-left: 5px;
+			}
+		}
+		.tag.intermediate {
+			background: #ffab10;
+		}
+		.tag.beginner {
+			background: #ff0000;
+		}
+		.tag.advance {
+			background: #0000ff;
+		}
+		font-family: "Open Sans", sans-serif;
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: -0.29px;
+		color: #ffffff;
+		text-transform: uppercase;
+		transition: .4s all ease;
+	}
+	.bookmark {
+		position: absolute;
+		right: 10px;
+		top: 15px;
+		a {
+			font-size: 20px;
+			color: #ffffff !important;
+			display: inline-block;
+			margin-top: -5px;
+		}
+
+	}
+	.price {
+		background: #fff;
+		font-size: 16px;
+		font-weight: 700;
+		font-style: normal;
+		line-height: normal;
+		letter-spacing: -0.09px;
+		color: #ff5248;
+		position: absolute;
+		left: 0;
+		bottom: 0px;
+		border-top-right-radius: 3px;
+		padding: 5px 15px;
+        transition: .4s all ease;
+        ins, del {
+            text-decoration: none;
+        }
+		del {
+			display: none;
+		}
+	}
+}
+.tutor-courses-grid-sub-title {
+	font-weight: 700;
+	line-height: 1.6;
+	letter-spacing: -0.25px;
+	color: #1f2949;
+	margin-bottom: -10px;
+	margin-top: 19px;
+}
+.tutor-course-grid-item {
+	.tutor-course-grid-content {
+        .tutor-course-overlay {
+            font-size: inherit;
+        }
+
+        h4.tutor-courses-grid-title{
+            a {
+                font-family: "Open Sans";
+                font-size: 16px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: -0.2px;
+                color: #1f2949;
+            }
+        } 
+		&:hover {
+			.level-tag {
+				opacity: 0;
+				transform: translateY(-40px);
+			}
+			.tutor-course-overlay-element {
+				.price {
+					opacity: 0;
+                    transform: translateY(20px);
+                    ins, del {
+                        text-decoration: none;
+                    }
+				}
+			}
+		}
+	}
+}
+.tab-vertical {
+	.view-all-course-btn {
+		margin-top: 22px;
+	}
+	.upskil-section-title {
+		padding: 0 40px 10px 0;
+	}
+	.skillate-related-course {
+		padding: 0;
+	}
+	.tab-wrapper {
+		display: flex;
+		align-items: flex-start;
+	}
+	.tab-nav-wrapper {
+		flex-basis: 300px;
+		flex-direction: column;
+		border: 0;
+	}
+	.tab-content {
+		flex-basis: calc(100% - 300px);
+		margin-top: 0px;
+	}
+	.tab-content-wrapper {
+        flex-basis: calc(100% - 300px);
+        .tutor-course-grid-item {
+            .tutor-course-grid-content {
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                border-radius: 0;
+                border: none;
+                background-color: #fff;
+            }
+        } 
+	}
+	.nav-tabs {
+		flex-direction: column;
+		li {
+            display: block;
+			a {
+				text-align: left;
+				display: block;
+			}
+			&:not(:first-child) {
+				margin-top: 2px;
+			}
+		}
+	}
+	.tab-nav-item {
+		background: #fafafa;
+	}
+	.tutor-course-grid-item {
+		margin-bottom: 40px;
+	}
+	.skillate-tab-nav-link.active {
+		color: #ff5248;
+		padding-left: 10px;
+		&:before {
+			color: #ff5248;
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	.skillate-tab-nav-link {
+		&:before {
+			position: absolute;
+			content: "";
+			width: 2px;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: #ff5248;
+			opacity: 0;
+			transition: .5s all ease;
+			transform: scale(0);
+		}
+		position: relative;
+		line-height: 1.2;
+	}
+	.skillate-tab-nav-item {
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+}
+.view-all-course-btn {
+	.btn-full-width {
+		display: block;
+		font-family: "Open Sans", sans-serif;
+		color: #ff5248;
+		border-radius: 3px !important;
+		border: 2px solid #dadce0;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		transition: .4s all ease;
+		&:hover {
+			box-shadow: -1px 3px 10px 0 rgba(0, 0, 0, 0.11);
+			transform: translateY(-1px);
+		}
+	}
+}
+
+
+.skillate-courses-tab-wrapper {
+	.tutor-course-grid-item {
+		.tutor-course-grid-content {
+			.tutor-course-overlay {
+				.tutor-course-grid-enroll {
+					.btn-no-fill:hover {
+						color: #ff5248;
+						background: #fff;
+					}
+					.course-related-hover-price {
+						font-size: 22px;
+						font-weight: 600;
+						color: #fff;
+						margin-bottom: 4px;
+						.price {
+							ins {
+								text-decoration: none;
+							}
+							del {
+								font-size: 16px;
+							}
+						}
+					}
+					.tutor-course-grid-level, 
+					.tutor-course-duration {
+						font-size: 14px;
+						font-weight: normal;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.71;
+						letter-spacing: -0.18px;
+						color: #ffffff;
+						padding: 0 10px;
+						position: relative;
+					}
+					.tutor-course-grid-level:after{
+						position: absolute;
+						right: -4px;
+						top: 10px;
+						height: 4px;
+						width: 4px;
+						border-radius: 100%;
+						background: #fff;
+						content: '';
+					}
+					.btn.btn-no-fill {
+						margin-top: 20px;
+					}
+				}
+			}
+			.tutor-course-overlay:after {
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+				background: #ff5248;
+				opacity: 0;
+				border-radius: 0;
+				-webkit-transition: .4s;
+				transition: .4s;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+		}
+	}
+
+	.tutor-course-grid-content:hover {
+		.tutor-course-overlay:after {
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+			opacity: 1;
+		}
+	}
+
+	
+
+
+}
+
+@media(max-width:767px){
+	.tab-vertical .tutor-course-grid-item{
+		margin-bottom: 20px !important;
+	}
+	.tutor-course-grid-item {
+		.tutor-course-grid-content {
+			.tutor-course-grid-enroll{
+				padding: 10px !important;
+				a.btn-classic{
+					padding: 10px !important;
+					font-size: 13px !important;
+				}
+			}
+			h4.tutor-courses-grid-title{
+				a {
+					font-size: 13px;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+	
+	.tab-vertical .upskil-section-title{
+		text-align: left !important;
+	}
+	.upskil-section-title h3{
+		font-size: 18px !important;
+	}
+
+	.tab-nav-wrapper{
+		.skillate-tab-nav-link{
+			font-size: 13px;
+		}
+		.skillate-tab-nav-item{
+			margin-bottom: 15px !important;
+		}
+	}
+}
+.skillate-content-tab-inner {
+	.skillate-related-course {
+		.tutor-course-grid-enroll{
+			.tutor-loop-cart-btn-wrap a {
+				margin-top: 15px !important;
+				height: 46px;
+			}
+		} 
+	}
+	
+}
+
+ul.skillate-tab-nav.nav.nav-tabs {
+	border: none;
+	padding: 0;
+	margin: 0;;
+}
+.tutor-courses-grid-title a {
+	transition: 400ms;
+}

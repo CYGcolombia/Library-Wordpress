@@ -1,0 +1,7 @@
+import './blocks/tutorcourse/index'
+import './blocks/skillatesearch/index'
+import './blocks/skillatecoursecategory/index'
+import './blocks/skillate-countdown/index'
+import './blocks/skillatecoursetab/index'
+import './blocks/courseauthor/index'
+import './blocks/skillate-lessons/index'

@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-06-06 16:44+0600\n"
+"PO-Revision-Date: 2022-06-06 16:44+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: core/Base.php:94
+msgid "Skillate Core"
+msgstr ""
+
+#: core/blocks/courseauthor/courseauthor.php:291
+#: core/blocks/courseauthor/courseauthor.php:356
+msgid "5"
+msgstr ""
+
+#: core/blocks/courseauthor/courseauthor.php:379
+msgid "Prev"
+msgstr ""
+
+#: core/blocks/courseauthor/courseauthor.php:379
+#: core/blocks/courseauthor/courseauthor.php:387
+msgid "Next"
+msgstr ""
+
+#: core/blocks/courseauthor/courseauthor.php:386
+msgid "Previous"
+msgstr ""
+
+#: core/blocks/skillate-course-tab/skillate-course-tab.php:313
+msgid "Featured"
+msgstr ""
+
+#: core/blocks/skillate-course-tab/skillate-course-tab.php:365
+msgid "Start Learning"
+msgstr ""
+
+#: core/blocks/skillate-course-tab/skillate-course-tab.php:372
+#: core/blocks/tutorcourse/tutorcourse.php:481
+#: core/blocks/tutorcourse/tutorcourse.php:607
+msgid "Enrolled"
+msgstr ""
+
+#: core/blocks/skillate-course-tab/skillate-course-tab.php:374
+#: core/blocks/tutorcourse/tutorcourse.php:483
+#: core/blocks/tutorcourse/tutorcourse.php:609 skillate-core.php:505
+msgid "Enroll Now"
+msgstr ""
+
+#: core/blocks/tutorcourse/tutorcourse.php:503
+msgid "By "
+msgstr ""
+
+#: core/blocks/tutorcourse/tutorcourse.php:505
+msgid " in "
+msgstr ""
+
+#: core/blocks/tutorcourse/tutorcourse.php:635
+msgid "View all Courses"
+msgstr ""
+
+#: lib/course-option.php:5 skillate-core.php:497
+msgid "Free"
+msgstr ""
+
+#: lib/course-option.php:6
+msgid "Paid"
+msgstr ""
+
+#: lib/course-option.php:55
+msgid "Make Instructor Favourite"
+msgstr ""
+
+#: lib/course-option.php:58
+msgid "Favourite Instructor"
+msgstr ""
+
+#: lib/course-option.php:60 meta-box/inc/fields/checkbox.php:50
+msgid "Yes"
+msgstr ""
+
+#: lib/course-option.php:81
+msgid "Search tutorial & article"
+msgstr ""
+
+#: lib/course-option.php:116
+msgid "Search Language"
+msgstr ""
+
+#: lib/course-option.php:117
+msgid "All Language"
+msgstr ""
+
+#: lib/course-option.php:118
+msgid "Parent Language"
+msgstr ""
+
+#: lib/course-option.php:119
+msgid "Parent Language:"
+msgstr ""
+
+#: lib/course-option.php:120
+msgid "Edit Language"
+msgstr ""
+
+#: lib/course-option.php:121
+msgid "Update Language"
+msgstr ""
+
+#: lib/course-option.php:122
+msgid "Add New Language"
+msgstr ""
+
+#: lib/course-option.php:123
+msgid "New Language Name"
+msgstr ""
+
+#: lib/course-option.php:124
+msgid "Language"
+msgstr ""
+
+#: lib/course-option.php:139
+msgid "Languages"
+msgstr ""
+
+#: lib/login-modal.php:23
+msgid "Remember Me"
+msgstr ""
+
+#: lib/login-modal.php:29
+#, php-format
+msgid "%s forget your password? %s"
+msgstr ""
+
+#: lib/login-modal.php:54
+msgid "OR"
+msgstr ""
+
+#: lib/login-modal.php:85
+#, php-format
+msgid "Already have an account? %s Sign In %s"
+msgstr ""
+
+#: lib/login/facebook/facebook.php:88 lib/login/facebook/facebook.php:117
+#: lib/login/google/google.php:102 lib/login/google/google.php:127
+#: lib/login/wordpress/wordpress.php:15
+msgid "Login successful, redirecting..."
+msgstr ""
+
+#: lib/login/facebook/facebook.php:119 lib/login/google/google.php:129
+#: lib/login/login.php:60 lib/login/wordpress/wordpress.php:13
+msgid "Wrong username or password."
+msgstr ""
+
+#: lib/login/login.php:26
+msgid "Wrong!!! Username field is empty."
+msgstr ""
+
+#: lib/login/login.php:29
+msgid "Wrong!!! Email field is empty."
+msgstr ""
+
+#: lib/login/login.php:32
+msgid "Wrong!!! Password field is empty."
+msgstr ""
+
+#: lib/login/login.php:36
+msgid "Wrong!!! Username already exits."
+msgstr ""
+
+#: lib/login/login.php:39
+msgid "Wrong!!! Password must 7 character or more."
+msgstr ""
+
+#: lib/login/login.php:42
+msgid "Wrong!!! Email address is not correct."
+msgstr ""
+
+#: lib/login/login.php:45
+msgid "Wrong!!! Email user already exits in this site."
+msgstr ""
+
+#: lib/login/login.php:57
+msgid "Registration successful you can login now."
+msgstr ""
+
+#: meta-box/inc/field.php:343
+msgid "+ Add more"
+msgstr ""
+
+#: meta-box/inc/fields/autocomplete.php:20
+msgid "Delete"
+msgstr ""
+
+#: meta-box/inc/fields/button.php:32
+msgid "Click me"
+msgstr ""
+
+#: meta-box/inc/fields/checkbox.php:50
+msgid "No"
+msgstr ""
+
+#: meta-box/inc/fields/file.php:21
+#, php-format
+msgid "You may only upload maximum %d file"
+msgstr ""
+
+#: meta-box/inc/fields/file.php:23
+#, php-format
+msgid "You may only upload maximum %d files"
+msgstr ""
+
+#: meta-box/inc/fields/file.php:79
+msgid "Error: Cannot delete file"
+msgstr ""
+
+#: meta-box/inc/fields/key-value.php:126
+msgid "Key"
+msgstr ""
+
+#: meta-box/inc/fields/key-value.php:127
+msgid "Value"
+msgstr ""
+
+#: meta-box/inc/fields/oembed.php:64
+msgid "Embed HTML not available."
+msgstr ""
+
+#: meta-box/inc/fields/post.php:36
+msgid "Select a post"
+msgstr ""
+
+#: meta-box/inc/fields/post.php:41 meta-box/inc/fields/taxonomy.php:52
+#, php-format
+msgid "Select a %s"
+msgstr ""
+
+#: meta-box/inc/fields/select-advanced.php:46
+msgid "Select an item"
+msgstr ""
+
+#: meta-box/inc/fields/select.php:87
+msgid "Select"
+msgstr ""
+
+#: meta-box/inc/fields/select.php:87
+msgid "All"
+msgstr ""
+
+#: meta-box/inc/fields/select.php:87
+msgid "None"
+msgstr ""
+
+#: meta-box/inc/fields/taxonomy.php:47
+msgid "Select a term"
+msgstr ""
+
+#: meta-box/inc/fields/user.php:30
+msgid "Select an user"
+msgstr ""
+
+#: meta_box.php:282
+msgid "Video Durations"
+msgstr ""
+
+#: skillate-core.php:93
+msgid "Post excerpt"
+msgstr ""
+
+#: skillate-core.php:103 skillate-core.php:123
+msgid "cat List"
+msgstr ""
+
+#: skillate-core.php:113
+msgid "Course Price"
+msgstr ""
+
+#: skillate-core.php:133
+msgid "Different sized featured images"
+msgstr ""
+
+#: skillate-core.php:209 skillate-core.php:258
+msgid "Course price"
+msgstr ""
+
+#: skillate-core.php:244
+msgid "Category list links"
+msgstr ""
+
+#: skillate-core.php:272
+msgid "Course Duration"
+msgstr ""
+
+#: widgets/about_widget.php:90
+msgid "Title :"
+msgstr ""

@@ -1,0 +1,118 @@
+$color_1: #1f2949;
+$color_2: #ffc922;
+$color_3: #797c7f;
+
+.skillate-instructor-thumb {
+	position: relative;
+	max-height: 236px;
+	overflow: hidden;
+	.rating-avg {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background: #fff;
+		border-top-right-radius: 3px;
+		font-size: 14px;
+		color: $color_1;
+		display: inline-block;
+		padding: 2px 20px;
+		strong {
+			font-weight: 600;
+		}
+		i {
+			color: $color_2;
+			margin-right: 3px;
+		}
+	}
+	img {
+		width: 100%;
+	}
+}
+.upskil-instructor-content {
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.11);
+	padding: 16px 16px 20px 16px;
+}
+.instructor-name {
+	font-size: 24px;
+	margin: 0px !important;
+}
+.instructor-course-count {
+	margin: 6px 0 0 0 !important;
+	color: $color_3;
+	strong {
+		color: $color_1;
+        font-weight: 600;
+        padding-right: 5px;
+	}
+}
+.skillate-instructor-content.slick-slide {
+	padding: 0 15px;
+}
+.skillate-instructor-content {
+	margin-bottom: 30px;
+	.skillate-instructor-thumb{
+		overflow: hidden;
+		img{
+			transition: all .4s;
+		}
+	}
+	&:hover{
+		.skillate-instructor-thumb{
+			img{
+				transform: scale(1.1);
+			}
+		}
+		.upskil-instructor-content{
+			box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.11);
+		}
+	}
+}
+
+@media(max-width:767px){
+	.upskil-instructor-content .instructor-name{
+		font-size: 14px;
+	}
+	.skillate-instructor-content .upskil-instructor-content{
+		padding: 10px;
+	}
+}
+.skillate-course.slider {
+    overflow: hidden;
+}
+.skillate-course .qubely-carousel.qubely-carousel-wrapper .qubely-carousel-item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.author-slide-parent:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background: rgba(255, 255, 255, .9);
+    content: '';
+    z-index: 2;
+    pointer-events: none;
+}
+
+.author-slide-parent:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background: rgba(255, 255, 255, .9);
+    content: '';
+    z-index: 2;
+    pointer-events: none;
+}

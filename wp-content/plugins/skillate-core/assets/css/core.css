@@ -1,0 +1,199 @@
+/*
+* Plugin Name: skillate Core
+* Plugin URI: http://www.themeum.com/item/core
+* Author: Themeum
+* Author URI: http://www.themeum.com
+* License - GNU/GPL V2 or Later
+* Description: Themeum Core is a required plugin for this theme.
+* Version: 1.0
+*/
+/* 
+.ui-datepicker {
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 54px rgba(0,0,0,0.15);
+	display: none;
+	margin-top: 4px;
+	padding: 10px;
+	width: 265px;
+	z-index: 100 !important;
+}
+.ui-datepicker a,
+.ui-datepicker a:hover {
+	text-decoration: none;
+}
+.ui-datepicker a:hover,
+.ui-datepicker td:hover a {
+	color: #2A6496;
+	-webkit-transition: color 0.1s ease-in-out;
+	-moz-transition: color 0.1s ease-in-out;
+	-o-transition: color 0.1s ease-in-out;
+	transition: color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-header {
+	margin-bottom: 10px;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title {
+	font-weight: 700;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	cursor: default;
+	font-family: 'Glyphicons Halflings';
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	margin-top: 2px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	float: left;
+	text-align: left;
+}
+.ui-datepicker .ui-datepicker-next {
+	float: right;
+	text-align: right;
+}
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+	background: none !important;
+}
+.ui-datepicker .ui-datepicker-prev:before {
+	content: "\f104";
+	font-family: fontawesome;
+	font-size: 22px;
+}
+.ui-datepicker .ui-datepicker-next:before {
+	content: "\f105";
+	font-family: fontawesome;
+	font-size: 22px;
+}
+.ui-datepicker .ui-icon {
+	display: none;
+}
+.ui-datepicker .ui-datepicker-calendar {
+	table-layout: fixed;
+	width: 100%;
+}
+.ui-datepicker .ui-datepicker-calendar th,
+.ui-datepicker .ui-datepicker-calendar td {
+	text-align: center;
+	padding: 2px 0;
+	color: #b5b5b5;
+}
+.ui-datepicker .ui-datepicker-calendar th{
+	color: #000;
+}
+.ui-datepicker .ui-datepicker-calendar td {
+	-webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-calendar td:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-calendar td a {
+	text-decoration: none;
+	color: #000;
+}
+.ui-datepicker .ui-datepicker-current-day a {
+	background-color: #00aeef;
+
+}
+.ui-datepicker .ui-datepicker-current-day a {
+	color: #fff !important;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable:hover {
+	background-color: #fff;
+	cursor: default;
+}
+.ui-datepicker .ui-datepicker-calendar,
+.ui-datepicker .ui-datepicker-calendar th, .ui-datepicker .ui-datepicker-calendar td{
+	border: none;
+}
+.ui-datepicker .ui-datepicker-calendar th, .ui-datepicker .ui-datepicker-calendar td{
+	width: 35px;
+	height: 35px;
+}
+.ui-datepicker .ui-datepicker-calendar td:hover{
+	background-color: transparent;
+}
+.ui-datepicker .ui-datepicker-calendar td:hover a{
+	color: #00aeef;
+}
+.ui-datepicker .ui-datepicker-calendar td span, .ui-datepicker .ui-datepicker-calendar td a {
+	width: 33px;
+	height: 33px;
+	line-height: 30px;
+	padding: 0;
+	border: 2px solid transparent;
+	box-shadow: none;
+	border-radius: 100%;
+	display: block;
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a{
+	background: #ececec;
+	color: #000;
+}
+.ui-datepicker .ui-datepicker-calendar td.ui-state-active a{
+	background: #00aeef;
+} */
+
+/*****CUSTOM LINK WIDGET CSS*****/
+.skillate-custom-link-widget li {
+    display: block;
+    margin-bottom: 20px;
+}
+.skillate-custom-link-widget li a {
+    display: block;
+    border: 1px solid #d8d9dc;
+    color: #1f2949;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 20px 20px 20px 75px !important;
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.5s;
+}
+.skillate-custom-link-widget li a img {
+    position: absolute;
+    left: 15%;
+    font-size: 16px;
+    top: 30%;
+}
+.skillate-custom-link-widget li a img.icon-white {
+    display: none;
+}
+.skillate-custom-link-widget li:hover a {
+    background: #1043c0;
+    background-image: url(../img/button-bg.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff !important;
+}
+.skillate-custom-link-widget li:hover a img.icon-white {
+    display: block;
+}
+.skillate-custom-link-widget li:hover a img.icon-blue {
+    display: none;
+}
+.tutor-course-grid-enroll .btn-no-fill,
+.btn {
+    font-family: Montserrat;
+}
+.tutor-course-grid-enroll a {
+    padding: 12px;
+    width: 130px;
+}
+.skillate-course-search-results ul {
+    background: #fff;
+    padding: 30px;
+}
+.skillate-course-search-results ul li {
+    display: block;
+}

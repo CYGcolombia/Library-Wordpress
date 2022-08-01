@@ -1,0 +1,12 @@
+{
+    "name": "skillate-core",
+    "version": "1.0.0",
+    "description": "skillate pro core",
+    "main": "index.js",
+    "scripts": {
+        "makepot": "wp i18n make-pot --exclude='source,src,node_modules,vendor' . languages/Skillate-core.pot"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  
