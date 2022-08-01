@@ -22,7 +22,7 @@
     $top_bottom_slide_count = get_theme_mod( 'top_bottom_slide_count', 6 );
     $slide_center_mod       = get_theme_mod( 'slide_center_mod', true ) ? 'true' : 'false';
     $slide_opacity_en       = get_theme_mod( 'slider_opacity_en', true ) ? '' : ' opacity-disable';
-    $feature_slider_title   = get_theme_mod( 'feature_slider_title', 'More Courses to get <b>You Started</b>' );
+    $feature_slider_title   = get_theme_mod( 'feature_slider_title', 'More Topics to get <b>You Started</b>' );
     
     $output = '';
     if ( $featured_posts->have_posts() ) {
