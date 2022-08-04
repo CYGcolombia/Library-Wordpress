@@ -229,7 +229,7 @@ class Edit extends Component {
                                 </div>
                                 : 
                                 <div className={`skillate-search-wrapper search search-layout-${layout}`}>
-                                    <input type="text" className="skillate-coursesearch-input" placeholder={__('Search your courses', 'Skillate-core')} name="s" />
+                                    <input type="text" className="skillate-coursesearch-input" placeholder={__('Search', 'Skillate-core')} name="s" />
                                     <div class="skillate-course-search-icons"></div>
                                     <button type="submit"> <img src={thm_option.plugin+'assets/img/search1.svg'} /></button>
                                 </div>
