@@ -280,12 +280,12 @@ if (! class_exists('skillate_Core_Tutor_Course_Search')) {
                                     $html .= '<div class="skillate-course-search-icons">';
                                         $html .= '<img src="'.skillate_CORE_URL.'assets/img/search.svg" />';
                                     $html .= '</div>';
-                                    $html .= '<input type="text" class="skillate-coursesearch-input" placeholder="'.esc_attr__('Search your courses', 'Skillate-core').'" value="'.esc_attr( get_search_query()).'" name="s" id="searchword" title="'.esc_attr_x( 'Search for:', 'label', 'Skillate-core' ).'" data-url="'.get_template_directory_uri().'/lib/search-data.php'.'">';
+                                    $html .= '<input type="text" class="skillate-coursesearch-input" placeholder="'.esc_attr__('Search', 'Skillate-core').'" value="'.esc_attr( get_search_query()).'" name="s" id="searchword" title="'.esc_attr_x( 'Search for:', 'label', 'Skillate-core' ).'" data-url="'.get_template_directory_uri().'/lib/search-data.php'.'">';
                                     $html .= '<button type="submit">'.$searchBtnText.' <i class="fas fa-search"></i></button>';
                                 $html .= '</div>';
                             }else {
                                 $html .= '<div class="skillate-search-wrapper search search-layout-'.$layout.'">';
-                                $html .= '<input type="text" class="skillate-coursesearch-input" placeholder="'.esc_attr__('Search your courses', 'Skillate-core').'" value="'.esc_attr( get_search_query()).'" name="s" id="searchword" title="'.esc_attr_x( 'Search for:', 'label', 'Skillate-core' ).'" data-url="'.get_template_directory_uri().'/lib/search-data.php'.'">';
+                                $html .= '<input type="text" class="skillate-coursesearch-input" placeholder="'.esc_attr__('Search', 'Skillate-core').'" value="'.esc_attr( get_search_query()).'" name="s" id="searchword" title="'.esc_attr_x( 'Search for:', 'label', 'Skillate-core' ).'" data-url="'.get_template_directory_uri().'/lib/search-data.php'.'">';
                                 $html .= '<div class="skillate-course-search-icons"></div>';
                                 $html .= '<button type="submit"><img src="'.skillate_CORE_URL.'assets/img/search1.svg" /></button>';
                                 $html .= '</div>';
