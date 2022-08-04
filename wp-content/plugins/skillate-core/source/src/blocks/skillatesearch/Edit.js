@@ -215,7 +215,7 @@ class Edit extends Component {
                                     <div class="skillate-course-search-icons">
                                         <img src={thm_option.plugin+'assets/img/search.svg'} />
                                     </div>
-                                    <input type="text" className="skillate-coursesearch-input" placeholder={__('Search your courses', 'Skillate-core')} name="s" />
+                                    <input type="text" className="skillate-coursesearch-input" placeholder={__('Search', 'Skillate-core')} name="s" />
                                     <button type="submit">
                                         <RichText
                                             key="editable"

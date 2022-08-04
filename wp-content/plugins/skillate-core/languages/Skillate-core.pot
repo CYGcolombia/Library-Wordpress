@@ -518,7 +518,7 @@ msgstr ""
 
 #: core/blocks/skillatesearch/skillatesearch.php:283
 #: core/blocks/skillatesearch/skillatesearch.php:288
-msgid "Search your courses"
+msgid "Search"
 msgstr ""
 
 #: meta-box/inc/fields/file-input.php:38
