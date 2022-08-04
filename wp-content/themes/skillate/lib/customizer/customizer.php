@@ -643,7 +643,7 @@ $skillate_panel_to_section = array(
                     'label'    => esc_html__( 'Feature Slider Title', 'skillate' ),
                     'type'     => 'text',
                     'priority' => 10,
-                    'default'  => 'More Courses to get <b>You Started</b>'
+                    'default'  => 'More Topics to get <b>You Started</b>'
 				),
 				array(
                     'settings' => 'featured_slider_total_item',
@@ -853,7 +853,7 @@ $skillate_panel_to_section = array(
                     'label'    => esc_html__( 'Related Course Title', 'skillate' ),
                     'type'     => 'text',
                     'priority' => 10,
-                    'default'  => 'More Courses to get <b>You Started</b>'
+                    'default'  => 'More Topics to get <b>You Started</b>'
 				),
             )//fields
 		),//course details setting		

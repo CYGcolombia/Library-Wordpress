@@ -32,7 +32,7 @@
     $related_posts = get_posts($course_args);
     $i = 0;
     $max_new_post = get_theme_mod('new_course_count', 5);
-    $related_course_title = get_theme_mod('related_course_title', 'More Courses to get <b>You Started</b>');
+    $related_course_title = get_theme_mod('related_course_title', 'More Topics to get <b>You Started</b>');
     $slide_opacity_en = get_theme_mod('slider_opacity_en', true) ? '' : ' opacity-disable';
 
     $output = '';
