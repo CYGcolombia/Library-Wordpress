@@ -305,7 +305,7 @@ msgstr ""
 
 #: lib/shortcode/course-archive.php:170 lib/shortcode/course-archive.php:403
 #, php-format
-msgid "Viewing %s Courses of %s"
+msgid "Viewing %s of %s"
 msgstr ""
 
 #: lib/shortcode/course-archive.php:392
