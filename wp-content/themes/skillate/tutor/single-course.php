@@ -398,6 +398,66 @@ foreach ($total_posts as $total_post) {
 
             </div>
             <div class="col-6">
+                <!-- <?php tutor_course_loop_add_to_cart(); ?> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="skillate-tab-menu-wrap" data-isSticky="<?php echo esc_attr($single_course_tab_sticky_menu); ?>">
+    <div class="container">
+        <ul class="nav nav-pills single-course-item-tab">
+            <li class="nav-item tab current" data-tab="tab-1">
+                <a href="#tab-1"><?php echo esc_html__('course Topics Content', 'skillate'); ?></a>
+            </li>
+            <li class="nav-item tab" data-tab="tab-2">
+                <a class="course-content-tab-link" href="#tab-about">
+                    <?php echo esc_html__('About Course', 'skillate'); ?>
+                </a>
+                <a class="course-content-tab-link" href="#tab-learn">
+                    <?php echo esc_html__('What to learn', 'skillate'); ?>
+                </a>
+
+                <a class="course-content-tab-link" href="#tab-requirement">
+                    <?php echo esc_html__('Requirement', 'skillate'); ?>
+                </a>
+
+                <a class="course-content-tab-link" href="#tab-audience">
+                    <?php echo esc_html__('Target Audience', 'skillate'); ?>
+                </a>
+
+                <?php if ($is_announcement_enabled || $is_privileged_user) { ?>
+                    <a class="course-content-tab-link" href="#tab-announcements">
+                        <?php echo esc_html__('Announcements', 'skillate'); ?>
+                    </a>
+                <?php } ?>
+
+                <?php if ($is_enrolled || $is_privileged_user) { ?>
+                    <a class="course-content-tab-link" href="#tab-qa">
+                        <?php echo esc_html__('Q&A', 'skillate'); ?>
+                    </a>
+                <?php } ?>
+
+                <?php if ($is_enrolled || $is_privileged_user) { ?>
+                    <a class="course-content-tab-link" href="#tab-attachments">
+                        <?php echo esc_html__('Attachments', 'skillate'); ?>
+                    </a>
+                <?php } ?>
+
+                <a class="course-content-tab-link" href="#tab-instructor">
+                    <?php echo esc_html__('Instructor', 'skillate'); ?>
+                </a>
+                <a class="course-content-tab-link" href="#tab-review">
+                    <?php echo esc_html__('Review', 'skillate'); ?>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
             <div class="skillate-tab-content-wrap">
                 <div id="tab-1" class="skillate-tab-content current">
                     <?php tutor_course_topics(); ?>
@@ -571,68 +631,8 @@ foreach ($total_posts as $total_post) {
 
                 </div>
             </div>
-            </div>
         </div>
-    </div>
-</div>
-
-<div class="skillate-tab-menu-wrap" data-isSticky="<?php echo esc_attr($single_course_tab_sticky_menu); ?>">
-    <div class="container">
-        <ul class="nav nav-pills single-course-item-tab">
-            <li class="nav-item tab current" data-tab="tab-1">
-                <a href="#tab-1"><?php echo esc_html__('course Topics Content', 'skillate'); ?></a>
-            </li>
-            <li class="nav-item tab" data-tab="tab-2">
-                <a class="course-content-tab-link" href="#tab-about">
-                    <?php echo esc_html__('About Course', 'skillate'); ?>
-                </a>
-                <a class="course-content-tab-link" href="#tab-learn">
-                    <?php echo esc_html__('What to learn', 'skillate'); ?>
-                </a>
-
-                <a class="course-content-tab-link" href="#tab-requirement">
-                    <?php echo esc_html__('Requirement', 'skillate'); ?>
-                </a>
-
-                <a class="course-content-tab-link" href="#tab-audience">
-                    <?php echo esc_html__('Target Audience', 'skillate'); ?>
-                </a>
-
-                <?php if ($is_announcement_enabled || $is_privileged_user) { ?>
-                    <a class="course-content-tab-link" href="#tab-announcements">
-                        <?php echo esc_html__('Announcements', 'skillate'); ?>
-                    </a>
-                <?php } ?>
-
-                <?php if ($is_enrolled || $is_privileged_user) { ?>
-                    <a class="course-content-tab-link" href="#tab-qa">
-                        <?php echo esc_html__('Q&A', 'skillate'); ?>
-                    </a>
-                <?php } ?>
-
-                <?php if ($is_enrolled || $is_privileged_user) { ?>
-                    <a class="course-content-tab-link" href="#tab-attachments">
-                        <?php echo esc_html__('Attachments', 'skillate'); ?>
-                    </a>
-                <?php } ?>
-
-                <a class="course-content-tab-link" href="#tab-instructor">
-                    <?php echo esc_html__('Instructor', 'skillate'); ?>
-                </a>
-                <a class="course-content-tab-link" href="#tab-review">
-                    <?php echo esc_html__('Review', 'skillate'); ?>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8">
-          
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-12">
             <div class="skillate-single-course-sidebar">
                 <div class="course-single-price">
                     <?php tutor_course_price(); ?>
@@ -693,7 +693,7 @@ foreach ($total_posts as $total_post) {
                         if (!$is_completed_course) {
                             ob_start();
                         ?>
-                            <form method="post">
+                            <!-- <form method="post">
                                 <?php wp_nonce_field(tutor()->nonce_action, tutor()->nonce); ?>
 
                                 <input type="hidden" value="<?php echo esc_attr(get_the_ID()); ?>" name="course_id" />
@@ -702,7 +702,7 @@ foreach ($total_posts as $total_post) {
                                 <button type="submit" class="button product_type_simple" name="complete_course_btn" value="complete_course">
                                     <?php esc_html_e('Complete Course', 'tutor'); ?>
                                 </button>
-                            </form>
+                            </form> -->
                         <?php
                             echo apply_filters('tutor_course/single/complete_form', ob_get_clean());
                         }
