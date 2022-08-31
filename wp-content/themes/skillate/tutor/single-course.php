@@ -144,69 +144,6 @@ foreach ($total_posts as $total_post) {
             </div>
         </div>
     </div>
-    <div class="container">
-        <?php do_action('tutor_course/single/lead_meta/after'); ?>
-    </div>
-    <?php if ($is_enrolled) { ?>
-        <div class="col-lg-6 col-sm-12 ml-auto text-left text-lg-right mt-lg-0 mt-3">
-            <div class="skillate-course-cart-btn enrolled">
-
-                <?php
-                $start_content = '';
-
-                // The user is enrolled anyway. No matter manual, free, purchased, woocommerce, edd, membership
-                // do_action( 'tutor_course/single/actions_btn_group/before' );
-
-                // Show Start/Continue/Retake Button
-                if ($lesson_url) {
-                    $button_class = 'tutor-btn tutor-btn-outline-primary tutor-btn-md' . ($retake_course ? ' tutor-course-retake-button' : '');
-
-                    // Button identifier class
-                    $button_identifier = 'start-continue-retake-button';
-                    $tag               = $retake_course ? 'button' : 'a';
-                    ob_start();
-
-                ?>
-                    <<?php echo $tag; ?> <?php echo $retake_course ? 'disabled="disabled"' : ''; ?> href="<?php echo esc_url($lesson_url); ?>" class="<?php echo esc_attr($button_class . ' ' . $button_identifier); ?>" data-course_id="<?php echo esc_attr(get_the_ID()); ?>">
-                        <?php
-                        if ($retake_course) {
-                            esc_html_e('Retake This Course', 'tutor');
-                        } elseif ($course_progress <= 0) {
-                            esc_html_e('Start Learning', 'tutor');
-                        } else {
-                            esc_html_e('Continue Learning', 'tutor');
-                        }
-                        ?>
-                    </<?php echo $tag; ?>>
-                <?php
-                    $start_content = ob_get_clean();
-                }
-                echo apply_filters('tutor_course/single/start/button', $start_content, get_the_ID()); ?>
-
-                <?php
-                if (!$is_completed_course) {
-                    ob_start();
-                ?>
-                    <form method="post">
-                        <?php wp_nonce_field(tutor()->nonce_action, tutor()->nonce); ?>
-
-                        <input type="hidden" value="<?php echo esc_attr(get_the_ID()); ?>" name="course_id" />
-                        <input type="hidden" value="tutor_complete_course" name="tutor_action" />
-
-                        <button type="submit" class="button product_type_simple" name="complete_course_btn" value="complete_course">
-                            <?php esc_html_e('Complete Course', 'tutor'); ?>
-                        </button>
-                    </form>
-                <?php
-                    echo apply_filters('tutor_course/single/complete_form', ob_get_clean());
-                }
-                ?>
-                <?php do_action('tutor_course/single/actions_btn_group/before'); ?>
-                <?php do_action('tutor_course/single/actions_btn_group/after'); ?>
-            </div>
-        </div>
-    <?php } ?>
-    </div>
 
 </div>
 
