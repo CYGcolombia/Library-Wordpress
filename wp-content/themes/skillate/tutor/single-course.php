@@ -256,6 +256,15 @@ foreach ($total_posts as $total_post) {
                     </div>
                     <?php do_action('tutor_course/single/after/content'); ?>
 
+                    <div id="tab-learn" class="clearfix">
+                        <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php echo esc_html__('What to learn?', 'skillate'); ?></h4>
+                        <?php
+                        echo wp_kses_post($learn_content = get_post_meta($idd, '_tutor_course_benefits', true));
+                        ?>
+                        <?php //tutor_course_benefits_html(); 
+                        ?>
+                    </div>
+
                     <div id="tab-requirement">
                         <?php tutor_course_requirements_html(); ?>
                     </div>

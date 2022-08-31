@@ -23,7 +23,7 @@ $is_enrolled = tutor_utils()->is_enrolled($course_id);
     <div class="tutor-single-course-segment  tutor-course-topics-wrap">
         <div class="tutor-course-topics-header">
             <div class="tutor-course-topics-header-left">
-                <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php _e('Course content', 'skillate'); ?></h4>
+                <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php _e('', 'skillate'); ?></h4>
             </div>
             <div class="tutor-course-topics-header">
 				<?php
