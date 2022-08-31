@@ -147,156 +147,6 @@ foreach ($total_posts as $total_post) {
     <div class="container">
         <?php do_action('tutor_course/single/lead_meta/after'); ?>
     </div>
-    <div class="container course-single-attribute">
-        <div class="row align-items-lg-center">
-            <?php if (!empty(get_tutor_course_level())) {
-                $disable_course_level = get_tutor_option('disable_course_level');
-                if (!$disable_course_level) {
-            ?>
-                    <div class="col-lg-2 col-4 mb-sm-0 mb-1">
-                        <div class="course-attribute-single">
-                            <span><?php echo esc_html__('Course Level', 'skillate'); ?></span>
-                            <h3><?php echo esc_html(get_tutor_course_level()); ?></h3>
-                        </div>
-                    </div>
-            <?php }
-            } ?>
-
-            <?php
-            $course_duration = get_tutor_course_duration_context_skillate();
-            if (!empty($course_duration)) { ?>
-                <div class="col-lg-2 col-4 mb-sm-0 mb-1">
-                    <div class="course-attribute-single">
-                        <span><?php echo esc_html__('Total Hour', 'skillate'); ?></span>
-                        <h3 class="duration">
-                            <?php echo $course_duration; ?>
-                        </h3>
-                    </div>
-                </div>
-            <?php } ?>
-
-            <?php $skillate_pro_tutor_lesson_count = tutor_utils()->get_lesson_count_by_course(get_the_ID());
-            if ($skillate_pro_tutor_lesson_count) { ?>
-                <div class="col-lg-2 col-4 mb-sm-0 mb-1">
-                    <div class="course-attribute-single d-none d-lg-block">
-                        <span><?php echo esc_html__('Video Tutorials', 'skillate'); ?></span>
-                        <h3><?php echo esc_html($skillate_pro_tutor_lesson_count); ?></h3>
-                    </div>
-                </div>
-            <?php } ?>
-            <?php if (!$is_enrolled) { ?>
-                <div class="col-lg-6 col-sm-12 ml-auto text-left text-lg-right mt-lg-0 mt-3">
-                    <?php
-                    $is_wishlisted = tutor_utils()->is_wishlisted($idd);
-                    $has_wish_list = '';
-                    if ($is_wishlisted) {
-                        $has_wish_list = 'has-wish-listed';
-                    }
-
-                    $rcp_en_class = class_exists('RCP_Requirements_Check') ? 'rcp-exits' : '';
-
-                    ?>
-                    <?php if ($is_purchasable) { ?>
-                        <div class="skillate-course-cart-btn d-none d-lg-flex align-items-center justify-content-end <?php echo esc_attr($rcp_en_class); ?>">
-                            <div>
-                                <?php
-                                if (is_user_logged_in()) {
-                                    echo '<span class="tutor-course-wishlist"><a href="javascript:;" class="tutor-icon-bookmark-line tutor-course-wishlist-btn ' . $has_wish_list . ' " data-course-id="' . $idd . '"></a> </span>';
-                                } else {
-                                    echo '<span class="tutor-course-wishlist"><a class="tutor-icon-fav-line" data-toggle="modal" href="#modal-login"></a></span>';
-                                }
-                                ?>
-                            </div>
-                            <div>
-                                <?php
-                                if ($is_privileged_user) :
-                                    $first_lesson_url = tutor_utils()->get_course_first_lesson(get_the_ID(), tutor()->lesson_post_type);
-                                    if (!$first_lesson_url) {
-                                        $first_lesson_url = tutor_utils()->get_course_first_lesson(get_the_ID());
-                                    }
-                                ?>
-                                    <a href="<?php echo esc_url($first_lesson_url); ?>" class="tutor-btn tutor-btn-primary tutor-btn-lg tutor-btn-block tutor-ml-20">
-                                        <?php esc_html_e('Start Learning', 'tutor'); ?>
-                                    </a>
-                                <?php
-                                endif;
-                                ?>
-                            </div>
-                            <?php
-                            $product_id = tutor_utils()->get_course_product_id();
-                            if (class_exists('woocommerce')) {
-                                $product = wc_get_product($product_id);
-                            }
-                            if (!class_exists('Easy_Digital_Downloads') && class_exists('woocommerce') && tutor_utils()->is_course_purchasable() && !$is_privileged_user) { ?>
-                                <form class="cart" action="<?php echo wc_get_checkout_url(); ?>" method="post" enctype='multipart/form-data'>
-                                    <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="tutor-btn tutor-btn-outline-primary tutor-ml-20 course-buy-now "> <?php echo esc_html__('Buy Now', 'skillate'); ?>
-                                    </button>
-                                </form>
-                            <?php }
-                            if (tutor_utils()->is_course_added_to_cart($product_id, true)) { ?>
-                                <a href="<?php echo wc_get_cart_url(); ?>" class="tutor-btn tutor-btn-primary tutor-btn-lg tutor-add-to-cart-button tutor-ml-20">
-                                    <span class="tutor-icon-cart-line tutor-mr-8"></span>
-                                    <span><?php _e('View Cart', 'tutor'); ?></span>
-                                </a>
-                            <?php
-                            } else if (!$is_privileged_user) {
-                            ?>
-                                <form action="<?php echo esc_url(apply_filters('tutor_course_add_to_cart_form_action', get_permalink(get_the_ID()))); ?>" method="post" enctype="multipart/form-data">
-                                    <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="tutor-btn tutor-btn-primary tutor-btn-lg tutor-ml-20 tutor-add-to-cart-button <?php echo $required_loggedin_class; ?>">
-                                        <span class="tutor-icon-cart-line tutor-mr-8"></span>
-                                        <span><?php echo esc_html($product->single_add_to_cart_text()); ?></span>
-                                    </button>
-                                </form>
-                            <?php
-                            }
-                            ?>
-
-                        </div>
-                </div>
-            <?php } else { ?>
-
-                <div class="skillate-course-cart-btn d-none d-lg-block <?php echo esc_attr($rcp_en_class); ?>">
-                    <div>
-                        <?php
-                        if ($is_privileged_user) :
-                            $first_lesson_url = tutor_utils()->get_course_first_lesson(get_the_ID(), tutor()->lesson_post_type);
-                            if (!$first_lesson_url) {
-                                $first_lesson_url = tutor_utils()->get_course_first_lesson(get_the_ID());
-                            }
-                        ?>
-                            <a href="<?php echo esc_url($first_lesson_url); ?>" class="tutor-btn tutor-btn-primary tutor-btn-lg tutor-ml-20">
-                                <?php esc_html_e('Start Learning', 'tutor'); ?>
-                            </a>
-                        <?php
-                        endif;
-                        ?>
-                    </div>
-                    <?php if (!is_user_logged_in() && !$is_privileged_user) { ?>
-                        <form class="tutor-enrol-course-form" method="post">
-                            <?php wp_nonce_field(tutor()->nonce_action, tutor()->nonce); ?>
-                            <input type="hidden" name="tutor_course_id" value="<?php echo esc_attr(get_the_ID()); ?>">
-                            <input type="hidden" name="tutor_course_action" value="_tutor_course_enroll_now">
-                            <a type="submit" class="button product_type_simple tutor-btn" data-toggle="modal" href="<?php if (!is_user_logged_in()) {
-                                                                                                                        echo "#modal-login";
-                                                                                                                    } ?>">
-                                <?php esc_html_e('Enroll Course', 'tutor'); ?>
-                            </a>
-                        </form>
-                    <?php } ?>
-                    <?php if (is_user_logged_in() && !$is_privileged_user) { ?>
-                        <form class="tutor-enrol-course-form" method="post">
-                            <?php wp_nonce_field(tutor()->nonce_action, tutor()->nonce); ?>
-                            <input type="hidden" name="tutor_course_id" value="<?php echo esc_attr(get_the_ID()); ?>">
-                            <input type="hidden" name="tutor_course_action" value="_tutor_course_enroll_now">
-                            <button type="submit" class="button product_type_simple tutor-btn tutor-enroll-course-button">
-                                <?php esc_html_e('Enroll Course', 'tutor'); ?>
-                            </button>
-                        </form>
-                    <?php } ?>
-                </div>
-            <?php } ?>
-        </div>
-    <?php } ?>
     <?php if ($is_enrolled) { ?>
         <div class="col-lg-6 col-sm-12 ml-auto text-left text-lg-right mt-lg-0 mt-3">
             <div class="skillate-course-cart-btn enrolled">
@@ -653,7 +503,62 @@ foreach ($total_posts as $total_post) {
                 <?php
                 }
                 ?>
+                <?php if ($is_enrolled) { ?>
+                    <div class="skillate-course-cart-btn enrolled tutor-mt-28">
+                        <?php
+                        $start_content = '';
 
+                        // The user is enrolled anyway. No matter manual, free, purchased, woocommerce, edd, membership
+                        // do_action( 'tutor_course/single/actions_btn_group/before' );
+
+                        // Show Start/Continue/Retake Button
+                        if ($lesson_url) {
+                            $button_class = 'tutor-btn tutor-btn-outline-primary tutor-btn-md tutor-btn-block' . ($retake_course ? ' tutor-course-retake-button' : '');
+
+                            // Button identifier class
+                            $button_identifier = 'start-continue-retake-button';
+                            $tag               = $retake_course ? 'button' : 'a';
+                            ob_start();
+
+                        ?>
+                            <<?php echo $tag; ?> <?php echo $retake_course ? 'disabled="disabled"' : ''; ?> href="<?php echo esc_url($lesson_url); ?>" class="<?php echo esc_attr($button_class . ' ' . $button_identifier); ?>" data-course_id="<?php echo esc_attr(get_the_ID()); ?>">
+                                <?php
+                                if ($retake_course) {
+                                    esc_html_e('Retake This Course', 'tutor');
+                                } elseif ($course_progress <= 0) {
+                                    esc_html_e('Start Learning', 'tutor');
+                                } else {
+                                    esc_html_e('Continue Learning', 'tutor');
+                                }
+                                ?>
+                            </<?php echo $tag; ?>>
+                        <?php
+                            $start_content = ob_get_clean();
+                        }
+                        echo apply_filters('tutor_course/single/start/button', $start_content, get_the_ID()); ?>
+
+                        <?php
+                        if (!$is_completed_course) {
+                            ob_start();
+                        ?>
+                            <form method="post">
+                                <?php wp_nonce_field(tutor()->nonce_action, tutor()->nonce); ?>
+
+                                <input type="hidden" value="<?php echo esc_attr(get_the_ID()); ?>" name="course_id" />
+                                <input type="hidden" value="tutor_complete_course" name="tutor_action" />
+
+                                <button type="submit" class="button product_type_simple" name="complete_course_btn" value="complete_course">
+                                    <?php esc_html_e('Complete Course', 'tutor'); ?>
+                                </button>
+                            </form>
+                        <?php
+                            echo apply_filters('tutor_course/single/complete_form', ob_get_clean());
+                        }
+                        ?>
+                        <?php do_action('tutor_course/single/actions_btn_group/before'); ?>
+                        <?php do_action('tutor_course/single/actions_btn_group/after'); ?>
+                    </div>
+                <?php } ?>
 
                 <?php
                 // Displaying -> Buy Now and Add to Cart/View Cart  ( Sidebar )
