@@ -256,15 +256,6 @@ foreach ($total_posts as $total_post) {
                     </div>
                     <?php do_action('tutor_course/single/after/content'); ?>
 
-                    <div id="tab-learn" class="clearfix">
-                        <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php echo esc_html__('What to learn?', 'skillate'); ?></h4>
-                        <?php
-                        echo wp_kses_post($learn_content = get_post_meta($idd, '_tutor_course_benefits', true));
-                        ?>
-                        <?php //tutor_course_benefits_html(); 
-                        ?>
-                    </div>
-
                     <div id="tab-requirement">
                         <?php tutor_course_requirements_html(); ?>
                     </div>
@@ -358,6 +349,53 @@ foreach ($total_posts as $total_post) {
                             <?php
                             }
                             do_action('tutor_course/single/enrolled/after/instructors'); ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php if ($is_enrolled || $is_privileged_user) { ?>
+                        <div id="tab-announcements">
+                            <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php echo _e('Announcements', 'skillate'); ?></h4>
+                            <?php tutor_course_announcements(); ?>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eius tempora, fugiat saepe voluptatibus eveniet fugit perspiciatis excepturi, aut nulla odio pariatur architecto sequi culpa? Iusto qui consequatur debitis eius nulla delectus provident quam quia, quibusdam quasi vitae praesentium ipsum, voluptatibus repellat dolore cumque sint ad iste a accusantium nobis!</div>
+                        </div>
+                    <?php } ?>
+
+                    <?php if ($is_enrolled || $is_privileged_user) { ?>
+                        <div id="tab-attachments">
+                            <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php echo _e('Attachments', 'skillate'); ?></h4>
+                            <?php get_tutor_posts_attachments(); ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php if ($is_enrolled || $is_privileged_user) { ?>
+                        <div id="tab-qa">
+                            <?php
+                            $disable_qa_for_this_course = get_post_meta($post->ID, '_tutor_enable_qa', true) != 'yes';
+                            $enable_q_and_a_on_course = tutor_utils()->get_option('enable_q_and_a_on_course');
+
+                            do_action('tutor_course/question_and_answer/before');
+                            if (!$disable_qa_for_this_course) {
+                                echo '<div class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16">' . __('Question & Answer', 'tutor') . '</div>';
+
+                                // New qna form
+                                tutor_load_template_from_custom_path(tutor()->path . '/views/qna/qna-new.php', array(
+                                    'course_id' => get_the_ID(),
+                                    'context' => 'course-single-qna-single'
+                                ), false);
+
+                                // Previous qna list
+                                $questions = tutor_utils()->get_qa_questions(0, 20, $search_term = '', $question_id = null, $meta_query = null, $asker_id = null, $question_status = null, $count_only = false, $args = array('course_id' => get_the_ID()));
+                                foreach ($questions as $question) {
+                                    tutor_load_template_from_custom_path(tutor()->path . '/views/qna/qna-single.php', array(
+                                        'question_id' => $question->comment_ID,
+                                        'context' => 'course-single-qna-single'
+                                    ), false);
+                                }
+                            } else {
+                                echo '<div class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16">' . __('This feature has been disabled by the administrator', 'tutor') . '</div>';
+                            }
+                            do_action('tutor_course/question_and_answer/after');
+                            ?>
                         </div>
                     <?php } ?>
 
