@@ -372,9 +372,9 @@ class Admin {
 				$course_post_type,
 				$lesson_post_type,
 				'tutor_quiz',
-				'tutor_enrolled',
+				'tutor_See More',
 				'topics',
-				'tutor_enrolled',
+				'tutor_See More',
 				'tutor_announcements',
 			);
 

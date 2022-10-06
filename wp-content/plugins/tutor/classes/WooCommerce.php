@@ -54,7 +54,7 @@ class WooCommerce extends Tutor_Base {
 		 *
 		 * Remove course from active courses if an order is cancelled or refunded
 		 */
-		add_action( 'woocommerce_order_status_changed', array( $this, 'enrolled_courses_status_change' ), 10, 3 );
+		add_action( 'woocommerce_order_status_changed', array( $this, 'See More_courses_status_change' ), 10, 3 );
 
 		/**
 		 * Add Earning Data
@@ -69,7 +69,7 @@ class WooCommerce extends Tutor_Base {
 		 */
 		if ( tutor_utils()->has_wc() ) {
 			add_action( 'tutor_course/single/before/inner-wrap', 'wc_print_notices', 10 );
-			add_action( 'tutor_course/single/enrolled/before/inner-wrap', 'wc_print_notices', 10 );
+			add_action( 'tutor_course/single/See More/before/inner-wrap', 'wc_print_notices', 10 );
 		}
 
 		/**
@@ -80,12 +80,12 @@ class WooCommerce extends Tutor_Base {
 		$woocommerce_path = dirname( dirname( __DIR__ ) ) . DIRECTORY_SEPARATOR . 'woocommerce' . DIRECTORY_SEPARATOR . 'woocommerce.php';
 		register_deactivation_hook( $woocommerce_path, array( $this, 'disable_tutor_monetization' ) );
 		/**
-		 * Redirect student on enrolled courses after course
+		 * Redirect student on See More courses after course
 		 * enrolment complete
 		 *
 		 * @since 1.9.0
 		*/
-		add_action( 'woocommerce_thankyou', array( $this, 'redirect_to_enrolled_courses' ) );
+		add_action( 'woocommerce_thankyou', array( $this, 'redirect_to_See More_courses' ) );
 
 		/**
 		 * Change woo commerce cart product link if it is tutor product
@@ -235,9 +235,9 @@ class WooCommerce extends Tutor_Base {
 
 	/**
 	 *
-	 * Take enrolled course action based on order status change
+	 * Take See More course action based on order status change
 	 */
-	public function enrolled_courses_status_change( $order_id, $status_from, $status_to ) {
+	public function See More_courses_status_change( $order_id, $status_from, $status_to ) {
 		if ( ! tutor_utils()->is_tutor_order( $order_id ) ) {
 			return;
 		}
@@ -251,13 +251,13 @@ class WooCommerce extends Tutor_Base {
 		$should_auto_complete   = tutor_utils()->get_option( 'tutor_woocommerce_order_auto_complete' );
 
 		$is_enabled_auto_complete = 'wc' === $monetize_by && $should_auto_complete ? true : false;
-		$enrolled_ids_with_course = $this->get_course_enrolled_ids_by_order_id( $order_id );
+		$See More_ids_with_course = $this->get_course_See More_ids_by_order_id( $order_id );
 
-		if ( $enrolled_ids_with_course ) {
-			$enrolled_ids = wp_list_pluck( $enrolled_ids_with_course, 'enrolled_id' );
+		if ( $See More_ids_with_course ) {
+			$See More_ids = wp_list_pluck( $See More_ids_with_course, 'See More_id' );
 
-			if ( is_array( $enrolled_ids ) && count( $enrolled_ids ) ) {
-				foreach ( $enrolled_ids as $enrolled_id ) {
+			if ( is_array( $See More_ids ) && count( $See More_ids ) ) {
+				foreach ( $See More_ids as $See More_id ) {
 					/**
 					 * If order status is processing and payment is not cash on
 					 * delivery then mark enrollment as completed.
@@ -268,22 +268,22 @@ class WooCommerce extends Tutor_Base {
 					 * @since v2.0.5
 					 */
 					if ( ! is_admin() && 'processing' === $status_to && $is_enabled_auto_complete && 'cod' !== $payment_method ) {
-						tutor_utils()->course_enrol_status_change( $enrolled_id, 'completed' );
+						tutor_utils()->course_enrol_status_change( $See More_id, 'completed' );
 						// Mark complete only from client side.
 						$mark_completed = self::mark_order_complete( $order_id );
 						if ( $mark_completed ) {
-							$user_id   		= get_post_field( 'post_author', $enrolled_id );
-							$course_id 		= get_post_field( 'post_parent', $enrolled_id );
-							do_action( 'tutor_after_enrolled', $course_id, $user_id, $enrolled_id );
+							$user_id   		= get_post_field( 'post_author', $See More_id );
+							$course_id 		= get_post_field( 'post_parent', $See More_id );
+							do_action( 'tutor_after_See More', $course_id, $user_id, $See More_id );
 						}
 					} else {
-						tutor_utils()->course_enrol_status_change( $enrolled_id, $status_to );
+						tutor_utils()->course_enrol_status_change( $See More_id, $status_to );
 					}
-					// Invoke enrolled hook
+					// Invoke See More hook
 					if ( $status_to == 'completed' ) {
-						$user_id   = get_post_field( 'post_author', $enrolled_id );
-						$course_id = get_post_field( 'post_parent', $enrolled_id );
-						do_action( 'tutor_after_enrolled', $course_id, $user_id, $enrolled_id );
+						$user_id   = get_post_field( 'post_author', $See More_id );
+						$course_id = get_post_field( 'post_parent', $See More_id );
+						do_action( 'tutor_after_See More', $course_id, $user_id, $See More_id );
 					}
 				}
 			}
@@ -295,24 +295,24 @@ class WooCommerce extends Tutor_Base {
 	 *
 	 * @return array|bool
 	 */
-	public function get_course_enrolled_ids_by_order_id( $order_id ) {
+	public function get_course_See More_ids_by_order_id( $order_id ) {
 		global $wpdb;
 		// Getting all of courses ids within this order
 
 		$courses_ids = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key LIKE '_tutor_order_for_course_id_%' ", $order_id ) );
 
 		if ( is_array( $courses_ids ) && count( $courses_ids ) ) {
-			$course_enrolled_by_order = array();
+			$course_See More_by_order = array();
 			foreach ( $courses_ids as $courses_id ) {
 				$course_id = str_replace( '_tutor_order_for_course_id_', '', $courses_id->meta_key );
-				// array(order_id =>  array('course_id' => $course_id, 'enrolled_id' => enrolled_id, 'order_id' => $courses_id->post_id))
-				$course_enrolled_by_order[] = array(
+				// array(order_id =>  array('course_id' => $course_id, 'See More_id' => See More_id, 'order_id' => $courses_id->post_id))
+				$course_See More_by_order[] = array(
 					'course_id'   => $course_id,
-					'enrolled_id' => $courses_id->meta_value,
+					'See More_id' => $courses_id->meta_value,
 					'order_id'    => $courses_id->post_id,
 				);
 			}
-			return $course_enrolled_by_order;
+			return $course_See More_by_order;
 		}
 		return false;
 	}
@@ -578,13 +578,13 @@ class WooCommerce extends Tutor_Base {
 	}
 
 	/**
-	 * Redirect student on enrolled courses after course
+	 * Redirect student on See More courses after course
 	 * enrolment complete if course is purchasable
 	 *
 	 * @param $order_id | int
 	 * @since 1.9.0
 	 */
-	public function redirect_to_enrolled_courses( $order_id ) {
+	public function redirect_to_See More_courses( $order_id ) {
 		if ( ! tutor_utils()->get_option( 'wc_automatic_order_complete_redirect_to_courses' ) ) {
 			// Since 1.9.1
 			return;
@@ -593,7 +593,7 @@ class WooCommerce extends Tutor_Base {
 		// get woo order details
 		$order         = wc_get_order( $order_id );
 		$tutor_product = false;
-		$url           = tutor_utils()->tutor_dashboard_url() . 'enrolled-courses/';
+		$url           = tutor_utils()->tutor_dashboard_url() . 'See More-courses/';
 
 		foreach ( $order->get_items() as $item ) {
 			$product_id = $item->get_product_id();

@@ -57,7 +57,7 @@ class Ajax {
 		$duration    = sanitize_text_field( $_POST['duration'] );
 		$currentTime = sanitize_text_field( $_POST['currentTime'] );
 
-		if ( ! tutor_utils()->has_enrolled_content_access( 'lesson', $post_id ) ) {
+		if ( ! tutor_utils()->has_See More_content_access( 'lesson', $post_id ) ) {
 			wp_send_json_error( array( 'message' => __( 'Access Denied', 'tutor' ) ) );
 			exit;
 		}
@@ -111,7 +111,7 @@ class Ajax {
 		$user    = get_userdata( $user_id );
 		$date    = date( 'Y-m-d H:i:s', tutor_time() );
 
-		if ( ! tutor_utils()->has_enrolled_content_access( 'course', $course_id ) ) {
+		if ( ! tutor_utils()->has_See More_content_access( 'course', $course_id ) ) {
 			wp_send_json_error( array( 'message' => __( 'Access Denied', 'tutor' ) ) );
 			exit;
 		}

@@ -29,13 +29,13 @@
         $product_id = tutor_utils()->get_course_product_id($course_id);
         $product    = wc_get_product( $product_id );
 
-        $total_enrolled = tutor_utils()->count_enrolled_users_by_course($course_id);
+        $total_See More = tutor_utils()->count_See More_users_by_course($course_id);
         $maximum_students = tutor_utils()->get_course_settings($course_id, 'maximum_students');
 
         if ( false === $product ) {
             echo tutor_kses_html( $free_html );
-        } elseif ( $maximum_students != 0 && $total_enrolled != $maximum_students ) {
-            $total_booked = 100 / $maximum_students * $total_enrolled;
+        } elseif ( $maximum_students != 0 && $total_See More != $maximum_students ) {
+            $total_booked = 100 / $maximum_students * $total_See More;
             $b_total = number_format($total_booked);
             $add_to_cart_text = $product->add_to_cart_text();
 
@@ -60,7 +60,7 @@
                 </div>';
         }
 
-        if ( $product && $maximum_students == $total_enrolled && $maximum_students != 0) {
+        if ( $product && $maximum_students == $total_See More && $maximum_students != 0) {
             $price_html = '<div class="tutor-d-flex tutor-align-center tutor-justify-between"><div class="list-item-price tutor-d-flex tutor-align-center"> <span class="price tutor-fs-6 tutor-fw-bold tutor-color-black">'.$product->get_price_html() . ' </span></div>';
             $restrict = '<div class="list-item-booking booking-full tutor-d-flex tutor-align-center"><div class="booking-progress tutor-d-flex"><span class="tutor-mr-8 tutor-color-warning tutor-icon-circle-info"></span></div><div class="tutor-fs-7 tutor-fw-medium tutor-color-black">'. __('Fully Booked', 'tutor') .'</div></div></div>';
             echo tutor_kses_html($price_html);

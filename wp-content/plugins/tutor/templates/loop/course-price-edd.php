@@ -32,11 +32,11 @@ add_filter( 'edd_purchase_link_defaults', function( $defaults ) {
             $product_id = tutor_utils()->get_course_product_id($course_id);
             $edd_price  = function_exists( 'edd_price' ) ? edd_price( $product_id ) : '';
          
-            $total_enrolled = tutor_utils()->count_enrolled_users_by_course($course_id);
+            $total_See More = tutor_utils()->count_See More_users_by_course($course_id);
             $maximum_students = tutor_utils()->get_course_settings($course_id, 'maximum_students');
 
-            if ($maximum_students != 0 && $total_enrolled != $maximum_students){
-                $total_booked = 100 / $maximum_students * $total_enrolled;
+            if ($maximum_students != 0 && $total_See More != $maximum_students){
+                $total_booked = 100 / $maximum_students * $total_See More;
                 $b_total = $total_booked;
                 // @codingStandardsIgnoreStart
                 echo '<div class="list-item-price-with-booking tutor-d-flex tutor-align-center tutor-justify-between">
@@ -61,7 +61,7 @@ add_filter( 'edd_purchase_link_defaults', function( $defaults ) {
                 // @codingStandardsIgnoreEnd
             }
 
-            if ( $maximum_students == $total_enrolled && $maximum_students != 0) {
+            if ( $maximum_students == $total_See More && $maximum_students != 0) {
                 $price_html = '<div class="tutor-d-flex tutor-align-center tutor-justify-between">
                                     <div class="list-item-price tutor-d-flex tutor-align-center"> 
                                         <span class="price tutor-fs-6 tutor-fw-bold tutor-color-black">'.

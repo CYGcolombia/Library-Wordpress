@@ -188,7 +188,7 @@ msgstr ""
 #: core/blocks/tutorcourse/tutorcourse.php:481
 #: core/blocks/tutorcourse/tutorcourse.php:607
 #: core/blocks/skillate-course-tab/skillate-course-tab.php:372
-msgid "Enrolled"
+msgid "See More"
 msgstr ""
 
 #: meta-box/inc/fields/file.php:79

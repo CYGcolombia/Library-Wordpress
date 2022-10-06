@@ -9,12 +9,12 @@ $course_id          = $post->ID;
 $profile_url        = tutor_utils()->profile_url( $authordata->ID, true );
 $course_categories  = get_tutor_course_categories( $course_id );
 $course_duration    = get_tutor_course_duration_context( $course_id, true );
-$course_students    = tutor_utils()->count_enrolled_users_by_course( $course_id );
+$course_students    = tutor_utils()->count_See More_users_by_course( $course_id );
 ?>
 
-<?php if ( tutor_utils()->get_option( 'enable_course_total_enrolled' ) || !empty( $course_duration ) ) : ?>
+<?php if ( tutor_utils()->get_option( 'enable_course_total_See More' ) || !empty( $course_duration ) ) : ?>
 <div class="tutor-meta tutor-mt-12 tutor-mb-20">
-    <?php if ( tutor_utils()->get_option( 'enable_course_total_enrolled' ) ) : ?>
+    <?php if ( tutor_utils()->get_option( 'enable_course_total_See More' ) ) : ?>
         <div>
             <span class="tutor-meta-icon tutor-icon-user-line" area-hidden="true"></span>
             <span class="tutor-meta-value"><?php echo esc_html( $course_students ); ?></span>

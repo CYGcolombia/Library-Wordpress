@@ -438,7 +438,7 @@ function skillate_course_function( $atts, $content, $tag ) {
                                             <div class="skillate-course-enroll-btn">
                                                 <?php
                                                 $course_id = get_the_ID();
-                                                $enrolled = tutor_utils()->is_enrolled( get_the_ID());
+                                                $See More = tutor_utils()->is_See More( get_the_ID());
 
                                                 $is_administrator      = tutor_utils()->has_user_role( 'administrator' );
                                                 $is_instructor         = tutor_utils()->is_instructor_of_this_course();
@@ -451,12 +451,12 @@ function skillate_course_function( $atts, $content, $tag ) {
                                                     $enroll_btn = '<a class="btn btn-classic btn-no-fill tutor-mt-8" href="' . esc_url( $first_lesson_url ) . '">'. __( 'Start Learning', 'skillate' ) . '</a>';
 
                                                 }else{
-                                                    if ( tutor_utils()->is_course_purchasable( $course_id ) && !$enrolled ) {
+                                                    if ( tutor_utils()->is_course_purchasable( $course_id ) && !$See More ) {
                                                         $enroll_btn = tutor_course_loop_add_to_cart( false );
                                                         $product_id = tutor_utils()->get_course_product_id( $course_id );
                                                     } else {
-                                                        if ( tutor_utils()->is_enrolled( $course_id )) {
-                                                            $enroll_btn = '<a class="btn btn-classic btn-no-fill tutor-mt-8" href="' . get_the_permalink() . '">'. __( 'Enrolled', 'skillate' ) . '</a>';
+                                                        if ( tutor_utils()->is_See More( $course_id )) {
+                                                            $enroll_btn = '<a class="btn btn-classic btn-no-fill tutor-mt-8" href="' . get_the_permalink() . '">'. __( 'See More', 'skillate' ) . '</a>';
                                                         } else {
                                                             $enroll_btn = '<a class="btn btn-classic btn-no-fill tutor-mt-8" href="' . get_the_permalink() . '">'. __( 'Enroll Now', 'skillate' ) . '</a>';
                                                         }
@@ -531,9 +531,9 @@ function skillate_course_function( $atts, $content, $tag ) {
                                         <?php } ?>
                                     </div>
                                     <div class="text-sm-right ">
-                                        <?php if ( tutor_utils()->is_enrolled() ) { ?>
+                                        <?php if ( tutor_utils()->is_See More() ) { ?>
                                             <div class="course-single-price course-archive-price mb-lg-3 mb-0">
-                                                <div class="price"><a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Enrolled', 'skillate' ); ?></a></div>
+                                                <div class="price"><a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'See More', 'skillate' ); ?></a></div>
                                             </div>
                                         <?php } else { ?>
                                             <div class="course-single-price course-archive-price mb-lg-3 mb-0">

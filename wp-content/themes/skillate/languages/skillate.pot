@@ -239,7 +239,7 @@ msgstr ""
 
 #: lib/course-archive-top-carousel.php:109 lib/course-archive-top.php:101
 #: lib/shortcode/course-archive.php:481 lib/single-related-post.php:110
-msgid "Enrolled"
+msgid "See More"
 msgstr ""
 
 #: lib/course-archive-top-carousel.php:111 lib/course-archive-top.php:103
@@ -614,15 +614,15 @@ msgstr ""
 msgid "Apply"
 msgstr ""
 
-#: tutor/single-course-enrolled.php:193 tutor/single-course.php:447
+#: tutor/single-course-See More.php:193 tutor/single-course.php:447
 msgid "Instructor"
 msgstr ""
 
-#: tutor/single-course-enrolled.php:213 tutor/single-course.php:469
+#: tutor/single-course-See More.php:213 tutor/single-course.php:469
 msgid "/5"
 msgstr ""
 
-#: tutor/single-course-enrolled.php:230 tutor/single-course.php:486
+#: tutor/single-course-See More.php:230 tutor/single-course.php:486
 msgid "Courses"
 msgstr ""
 

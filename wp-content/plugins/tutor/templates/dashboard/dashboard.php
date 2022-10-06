@@ -127,14 +127,14 @@ if ( tutor_utils()->get_option( 'enable_profile_completion' ) ) {
 <div class="tutor-dashboard-content-inner">
 	<?php
 	$user_id		   = get_current_user_id();
-	$enrolled_course   = tutor_utils()->get_enrolled_courses_by_user();
+	$See More_course   = tutor_utils()->get_See More_courses_by_user();
 	$completed_courses = tutor_utils()->get_completed_courses_ids_by_user();
 	$total_students    = tutor_utils()->get_total_students_by_instructor( $user_id );
 	$my_courses        = tutor_utils()->get_courses_by_instructor( $user_id, CourseModel::STATUS_PUBLISH );
 	$earning_sum       = WithdrawModel::get_withdraw_summary( $user_id );
 	$active_courses	   = tutor_utils()->get_active_courses_by_user( $user_id );
 
-	$enrolled_course_count		= $enrolled_course ? $enrolled_course->post_count : 0;
+	$See More_course_count		= $See More_course ? $See More_course->post_count : 0;
 	$completed_course_count		= count( $completed_courses );
 	$active_course_count		= is_object( $active_courses ) && $active_courses->have_posts() ? $active_courses->post_count : 0;
 
@@ -152,9 +152,9 @@ if ( tutor_utils()->get_option( 'enable_profile_completion' ) ) {
 					<span class="tutor-round-box tutor-mr-12 tutor-mr-lg-0 tutor-mb-lg-12">
 						<i class="tutor-icon-book-open" area-hidden="true"></i>
 					</span>
-					<div class="tutor-fs-3 tutor-fw-bold tutor-d-none tutor-d-lg-block"><?php echo esc_html( $enrolled_course_count ); ?></div>
-					<div class="tutor-fs-7 tutor-color-secondary"><?php esc_html_e( 'Enrolled Courses', 'tutor' ); ?></div>
-					<div class="tutor-fs-4 tutor-fw-bold tutor-d-block tutor-d-lg-none tutor-ml-auto"><?php echo esc_html( $enrolled_course_count ); ?></div>
+					<div class="tutor-fs-3 tutor-fw-bold tutor-d-none tutor-d-lg-block"><?php echo esc_html( $See More_course_count ); ?></div>
+					<div class="tutor-fs-7 tutor-color-secondary"><?php esc_html_e( 'See More Courses', 'tutor' ); ?></div>
+					<div class="tutor-fs-4 tutor-fw-bold tutor-d-block tutor-d-lg-none tutor-ml-auto"><?php echo esc_html( $See More_course_count ); ?></div>
 				</div>
 			</div>
 		</div>
@@ -340,7 +340,7 @@ if ( count( $instructor_course ) ) {
 								<?php esc_html_e( 'Course Name', 'tutor' ); ?>
 							</th>
 							<th>
-								<?php esc_html_e( 'Enrolled', 'tutor' ); ?>
+								<?php esc_html_e( 'See More', 'tutor' ); ?>
 							</th>
 							<th>
 								<?php esc_html_e( 'Rating', 'tutor' ); ?>
@@ -352,7 +352,7 @@ if ( count( $instructor_course ) ) {
 						<?php if ( is_array( $instructor_course ) && count( $instructor_course ) ) : ?>
 							<?php
 							foreach ( $instructor_course as $course ) :
-								$enrolled      = tutor_utils()->count_enrolled_users_by_course( $course->ID );
+								$See More      = tutor_utils()->count_See More_users_by_course( $course->ID );
 								$course_status = isset( $status_translations[ $course->post_status ] ) ? $status_translations[ $course->post_status ] : __( $course->post_status, 'tutor' );
 								$course_rating = tutor_utils()->get_course_rating( $course->ID );
 								$course_badge  = isset( $course_badges[ $course->post_status ] ) ? $course_badges[ $course->post_status ] : 'dark';
@@ -364,7 +364,7 @@ if ( count( $instructor_course ) ) {
 										</a>
 									</td>
 									<td>
-										<?php esc_html_e( $enrolled ); ?>
+										<?php esc_html_e( $See More ); ?>
 									</td>
 									<td>
 										<?php tutor_utils()->star_rating_generator_v2( $course_rating->rating_avg, null, true ); ?>

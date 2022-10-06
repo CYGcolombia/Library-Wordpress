@@ -483,8 +483,8 @@ if (!class_exists('skillate_Core_Tutor_Course')) {
                             //$product    = wc_get_product( $product_id );
                             $html .= tutor_course_loop_add_to_cart(false);
                         } else {
-                            if (tutor_utils()->is_enrolled($idd)) {
-                                $html .= '<a href="' . esc_url(get_the_permalink()) . '" class="btn btn-classic btn-no-fill">' . __('Enrolled', 'Skillate-core') . '</a>';
+                            if (tutor_utils()->is_See More($idd)) {
+                                $html .= '<a href="' . esc_url(get_the_permalink()) . '" class="btn btn-classic btn-no-fill">' . __('See More', 'Skillate-core') . '</a>';
                             } else {
                                 $html .= '<a href="' . esc_url(get_the_permalink()) . '" class="btn btn-classic btn-no-fill">' . __('Enroll Now', 'Skillate-core') . '</a>';
                             }
@@ -611,8 +611,8 @@ if (!class_exists('skillate_Core_Tutor_Course')) {
                                 //$product    = wc_get_product( $product_id );
                                 $html .= tutor_course_loop_add_to_cart(false);
                             } else {
-                                if (tutor_utils()->is_enrolled($idd)) {
-                                    $html .= '<a href="' . esc_url(get_the_permalink()) . '" class="btn btn-classic btn-no-fill">' . __('Enrolled', 'Skillate-core') . '</a>';
+                                if (tutor_utils()->is_See More($idd)) {
+                                    $html .= '<a href="' . esc_url(get_the_permalink()) . '" class="btn btn-classic btn-no-fill">' . __('See More', 'Skillate-core') . '</a>';
                                 } else {
                                     $html .= '<a href="' . esc_url(get_the_permalink()) . '" class="btn btn-classic btn-no-fill">' . __('Enroll Now', 'Skillate-core') . '</a>';
                                 }

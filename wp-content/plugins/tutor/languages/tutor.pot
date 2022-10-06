@@ -274,7 +274,7 @@ msgstr ""
 msgid "Bulk Action"
 msgstr ""
 
-#: classes/Backend_Page_Trait.php:49, templates/dashboard/dashboard.php:302, templates/loop/enrolled-course-progress.php:21, templates/single/course/course-entry-box.php:75
+#: classes/Backend_Page_Trait.php:49, templates/dashboard/dashboard.php:302, templates/loop/See More-course-progress.php:21, templates/single/course/course-entry-box.php:75
 msgid "Complete"
 msgstr ""
 
@@ -791,7 +791,7 @@ msgid "Auto redirect to courses"
 msgstr ""
 
 #: classes/Options_V2.php:537
-msgid "When a user's WooCommerce order is auto-completed, they will be redirected to enrolled courses"
+msgid "When a user's WooCommerce order is auto-completed, they will be redirected to See More courses"
 msgstr ""
 
 #: classes/Options_V2.php:542
@@ -807,7 +807,7 @@ msgid "Auto Course Complete on all Lesson Completion"
 msgstr ""
 
 #: classes/Options_V2.php:553
-msgid "If enabled, an Enrolled Course will be automatically completed if all its Lessions, Quizzes, and Assignments are already completed by the Student"
+msgid "If enabled, an See More Course will be automatically completed if all its Lessions, Quizzes, and Assignments are already completed by the Student"
 msgstr ""
 
 #: classes/Options_V2.php:558
@@ -1215,11 +1215,11 @@ msgid "Enable to show course duration"
 msgstr ""
 
 #: classes/Options_V2.php:1049, templates/single/course/course-entry-box.php:19, templates/single/course/course-entry-box.php:20
-msgid "Total Enrolled"
+msgid "Total See More"
 msgstr ""
 
 #: classes/Options_V2.php:1052
-msgid "Enable to show total enrolled students"
+msgid "Enable to show total See More students"
 msgstr ""
 
 #: classes/Options_V2.php:1057
@@ -2479,7 +2479,7 @@ msgid " left"
 msgstr ""
 
 #: classes/Utils.php:2361, templates/public-profile.php:128
-msgid "Course Enrolled"
+msgid "Course See More"
 msgstr ""
 
 #: classes/Utils.php:2721
@@ -2665,8 +2665,8 @@ msgstr ""
 msgid "My Profile"
 msgstr ""
 
-#: classes/Utils.php:9313, templates/dashboard/dashboard.php:156, templates/dashboard/enrolled-courses.php:17
-msgid "Enrolled Courses"
+#: classes/Utils.php:9313, templates/dashboard/dashboard.php:156, templates/dashboard/See More-courses.php:17
+msgid "See More Courses"
 msgstr ""
 
 #: classes/Utils.php:9317, templates/dashboard/wishlist.php:15, templates/single/course/lead-info.php:83
@@ -2681,7 +2681,7 @@ msgstr ""
 msgid "Order History"
 msgstr ""
 
-#: classes/Utils.php:9333, templates/dashboard/question-answer.php:36, views/pages/question_answer.php:41, templates/single/course/enrolled/question_and_answer.php:95
+#: classes/Utils.php:9333, templates/dashboard/question-answer.php:36, views/pages/question_answer.php:41, templates/single/course/See More/question_and_answer.php:95
 msgid "Question & Answer"
 msgstr ""
 
@@ -3048,7 +3048,7 @@ msgid "Please make sure you are logged in to correct account if the content need
 msgstr ""
 
 #: templates/public-profile.php:128
-msgid "Courses Enrolled"
+msgid "Courses See More"
 msgstr ""
 
 #: templates/public-profile.php:133
@@ -3175,11 +3175,11 @@ msgstr ""
 msgid "You are almost done"
 msgstr ""
 
-#: templates/dashboard/dashboard.php:169, templates/dashboard/enrolled-courses.php:18
+#: templates/dashboard/dashboard.php:169, templates/dashboard/See More-courses.php:18
 msgid "Active Courses"
 msgstr ""
 
-#: templates/dashboard/dashboard.php:182, templates/dashboard/enrolled-courses.php:19
+#: templates/dashboard/dashboard.php:182, templates/dashboard/See More-courses.php:19
 msgid "Completed Courses"
 msgstr ""
 
@@ -3222,7 +3222,7 @@ msgid "Course Name"
 msgstr ""
 
 #: templates/dashboard/dashboard.php:343
-msgid "Enrolled"
+msgid "See More"
 msgstr ""
 
 #: templates/dashboard/logged-in.php:9
@@ -3449,7 +3449,7 @@ msgstr ""
 msgid "Instructor Cover Photo"
 msgstr ""
 
-#: templates/loop/course-author.php:28, templates/loop/meta.php:41, templates/single/course/lead-info.php:57, templates/single/course/enrolled/announcements.php:30
+#: templates/loop/course-author.php:28, templates/loop/meta.php:41, templates/single/course/lead-info.php:57, templates/single/course/See More/announcements.php:30
 msgid "By"
 msgstr ""
 
@@ -5150,7 +5150,7 @@ msgid "Complete Course"
 msgstr ""
 
 #: templates/single/course/course-entry-box.php:145
-msgid "You enrolled in this course on"
+msgid "You See More in this course on"
 msgstr ""
 
 #: templates/single/course/course-target-audience.php:27
@@ -5207,7 +5207,7 @@ msgstr ""
 msgid "Edit review"
 msgstr ""
 
-#: templates/single/course/reviews.php:134, templates/single/lesson/comment.php:33, templates/single/course/enrolled/question_and_answer.php:62
+#: templates/single/course/reviews.php:134, templates/single/lesson/comment.php:33, templates/single/course/See More/question_and_answer.php:62
 msgid "Load More"
 msgstr ""
 

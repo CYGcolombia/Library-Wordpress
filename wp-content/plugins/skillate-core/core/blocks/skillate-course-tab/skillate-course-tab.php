@@ -330,7 +330,7 @@ if (! class_exists('skillate_Core_Tutor_Course_Tab')) {
                                                                 $html .= '</span>';
                                                             $html .= '</div>';
                                                         }
-                                                        if( ($enablePrice == 1 ) && !tutor_utils()->is_enrolled($data->ID) ) {
+                                                        if( ($enablePrice == 1 ) && !tutor_utils()->is_See More($data->ID) ) {
                                                             $html .= '<div class="price">';
                                                                 ob_start();
                                                                 $html .= tutor_course_price();
@@ -348,7 +348,7 @@ if (! class_exists('skillate_Core_Tutor_Course_Tab')) {
                                                         $html .= '<span class="tutor-course-grid-level">'.get_tutor_course_level().'</span>';
                                                         
                                                         $course_duration = function_exists('get_tutor_course_duration_context_skillate') ? get_tutor_course_duration_context_skillate($data->ID) : null;
-                                                        $enrolled = tutor_utils()->is_enrolled($data->ID);
+                                                        $See More = tutor_utils()->is_See More($data->ID);
                                                         
                                                         $is_administrator      = tutor_utils()->has_user_role( 'administrator' );
                                                         $is_instructor         = tutor_utils()->is_instructor_of_this_course();
@@ -364,12 +364,12 @@ if (! class_exists('skillate_Core_Tutor_Course_Tab')) {
                                                         if($is_privileged_user){
                                                             $html .= '<a href="'. esc_url( $first_lesson_url ) .'" class="btn btn-classic btn-no-fill">'.__('Start Learning', 'Skillate-core').'</a>';
                                                         }else{
-                                                            if ( tutor_utils()->is_course_purchasable($data->ID) && !$enrolled )  {
+                                                            if ( tutor_utils()->is_course_purchasable($data->ID) && !$See More )  {
                                                                 $product_id = tutor_utils()->get_course_product_id($data->ID);
                                                                 $html .= tutor_course_loop_add_to_cart(false);
                                                             }else{
-                                                                if (tutor_utils()->is_enrolled($data->ID)) {
-                                                                $html .= '<a href="'.esc_url(get_the_permalink($data->ID)).'" class="btn btn-classic btn-no-fill">'.__('Enrolled', 'Skillate-core').'</a>';
+                                                                if (tutor_utils()->is_See More($data->ID)) {
+                                                                $html .= '<a href="'.esc_url(get_the_permalink($data->ID)).'" class="btn btn-classic btn-no-fill">'.__('See More', 'Skillate-core').'</a>';
                                                                 } else {
                                                                     $html .= '<a href="'.esc_url(get_the_permalink($data->ID)).'" class="btn btn-classic btn-no-fill">'.__('Enroll Now', 'Skillate-core').'</a>';
                                                                 }

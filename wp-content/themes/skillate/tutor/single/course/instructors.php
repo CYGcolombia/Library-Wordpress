@@ -10,7 +10,7 @@
 
 
 
-do_action('tutor_course/single/enrolled/before/instructors');
+do_action('tutor_course/single/See More/before/instructors');
 
 $instructors = tutor_utils()->get_instructors_by_course();
 if ($instructors){
@@ -81,4 +81,4 @@ if ($instructors){
 	<?php
 }
 
-do_action('tutor_course/single/enrolled/after/instructors');
+do_action('tutor_course/single/See More/after/instructors');

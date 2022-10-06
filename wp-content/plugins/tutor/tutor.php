@@ -83,7 +83,7 @@ if ( ! function_exists( 'tutor' ) ) {
 			'topics_post_type'	   	 => apply_filters( 'tutor_topics_post_type', 'topics' ),
 			'announcement_post_type' => apply_filters( 'tutor_announcement_post_type', 'tutor_announcements' ),
 			'assignment_post_type'	 => apply_filters( 'tutor_assignment_post_type', 'tutor_assignments' ),
-			'enrollment_post_type'   => apply_filters( 'tutor_enrollment_post_type', 'tutor_enrolled' ),
+			'enrollment_post_type'   => apply_filters( 'tutor_enrollment_post_type', 'tutor_See More' ),
 			'quiz_post_type'   		 => apply_filters( 'tutor_quiz_post_type', 'tutor_quiz' ),
 			'zoom_post_type'   		 => apply_filters( 'tutor_zoom_meeting_post_type', 'tutor_zoom_meeting' ),
 		);

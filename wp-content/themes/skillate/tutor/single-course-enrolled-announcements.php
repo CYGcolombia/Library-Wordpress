@@ -12,7 +12,7 @@ get_header();
 
 $course_details_rating = get_theme_mod('course_details_rating', true);
 
-do_action('tutor_course/single/enrolled/before/wrap');
+do_action('tutor_course/single/See More/before/wrap');
 ?>
 
 <div <?php tutor_post_class('tutor-single-anouncement-wrap tutor-page-wrap'); ?>>
@@ -112,7 +112,7 @@ do_action('tutor_course/single/enrolled/before/wrap');
                     }
                     ?>
                     <?php tutor_course_mark_complete_html(); ?>
-                    <?php do_action('tutor_enrolled_box_after') ?>
+                    <?php do_action('tutor_See More_box_after') ?>
                 </div>
             </div>
         </div>
@@ -135,7 +135,7 @@ do_action('tutor_course/single/enrolled/before/wrap');
 
         <div class="tutor-row">
             <div class="tutor-col-8  tutor-col-md-100">
-                <?php do_action('tutor_course/single/enrolled/before/inner-wrap'); ?>
+                <?php do_action('tutor_course/single/See More/before/inner-wrap'); ?>
 
 
                     <div class="tutor-course-status">
@@ -150,13 +150,13 @@ do_action('tutor_course/single/enrolled/before/wrap');
                     </div>
 
 
-                <?php //tutor_course_enrolled_lead_info(); ?>
-                <?php tutor_course_enrolled_nav(); ?>
+                <?php //tutor_course_See More_lead_info(); ?>
+                <?php tutor_course_See More_nav(); ?>
                 <?php tutor_course_announcements(); ?>
-                <?php do_action('tutor_course/single/enrolled/after/inner-wrap'); ?>
+                <?php do_action('tutor_course/single/See More/after/inner-wrap'); ?>
             </div>
             <div class="tutor-col-4">
-                <?php do_action('tutor_course/single/enrolled/before/sidebar'); ?>
+                <?php do_action('tutor_course/single/See More/before/sidebar'); ?>
                 <div class="skillate-single-course-sidebar">
                     <div class="course-single-price">
                         <?php tutor_course_price(); ?>
@@ -165,13 +165,13 @@ do_action('tutor_course/single/enrolled/before/wrap');
                         <h4 class="course-single-sidebar-title"><?php esc_html_e('Share', 'skillate') ?></h4>
                         <?php tutor_social_share(); ?>
                 </div>
-                <?php do_action('tutor_course/single/enrolled/after/sidebar'); ?>
+                <?php do_action('tutor_course/single/See More/after/sidebar'); ?>
             </div>
         </div>
     </div>
 </div>
 <?php
-do_action('tutor_course/single/enrolled/after/wrap');
+do_action('tutor_course/single/See More/after/wrap');
 $related_course_slider = get_theme_mod('related_course_slider', true);
 if($related_course_slider) {
     get_template_part( 'lib/single-related-post' );

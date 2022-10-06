@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $topics      = tutor_utils()->get_topics();
 $course_id   = get_the_ID();
-$is_enrolled = tutor_utils()->is_enrolled( $course_id );
+$is_See More = tutor_utils()->is_See More( $course_id );
 $index       = 0;
 
 do_action( 'tutor_course/single/before/topics' );
@@ -70,7 +70,7 @@ do_action( 'tutor_course/single/before/topics' );
 										$post->post_type 		=== 'tutor_zoom_meeting' ? $topic_content_icon = 'tutor-icon-brand-zoom' : 0;
 										
 										$is_public_course 		= \TUTOR\Course_List::is_public( $course_id );
-										$is_locked 				= ! ( $is_enrolled || $is_preview || $is_public_course );
+										$is_locked 				= ! ( $is_See More || $is_preview || $is_public_course );
 									?>
 									<li class="tutor-course-content-list-item">
 										<div class="tutor-d-flex tutor-align-center">
@@ -86,9 +86,9 @@ do_action( 'tutor_course/single/before/topics' );
 														$countdown    = '<div class="tutor-zoom-lesson-countdown tutor-lesson-duration" data-timer="' . $zoom_meeting->countdown_date . '" data-timezone="' . $zoom_meeting->timezone . '"></div>';
 													}
 	
-													// Show clickable content if enrolled
+													// Show clickable content if See More
 													// Or if it is public and not paid, then show content forcefully
-													if ( $is_enrolled || ( get_post_meta( $course_id, '_tutor_is_public_course', true ) == 'yes' && ! tutor_utils()->is_course_purchasable( $course_id ) ) ) {
+													if ( $is_See More || ( get_post_meta( $course_id, '_tutor_is_public_course', true ) == 'yes' && ! tutor_utils()->is_course_purchasable( $course_id ) ) ) {
 														$lesson_title .= "<a href='" . get_the_permalink() . "'> " . get_the_title() . ' </a>';
 	
 														if ( $countdown ) {

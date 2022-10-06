@@ -48,7 +48,7 @@ msgstr ""
 #: core/blocks/skillate-course-tab/skillate-course-tab.php:372
 #: core/blocks/tutorcourse/tutorcourse.php:481
 #: core/blocks/tutorcourse/tutorcourse.php:607
-msgid "Enrolled"
+msgid "See More"
 msgstr ""
 
 #: core/blocks/skillate-course-tab/skillate-course-tab.php:374

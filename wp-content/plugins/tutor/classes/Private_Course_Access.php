@@ -32,7 +32,7 @@ class Private_Course_Access {
             $result = $wpdb->get_results($private_query);
             $private_course_id = (is_array($result) && isset($result[0])) ? $result[0]->ID : 0;
             
-            if($private_course_id>0 && tutor_utils()->is_enrolled($private_course_id)){
+            if($private_course_id>0 && tutor_utils()->is_See More($private_course_id)){
                 $this->allow_empty = true;
                 $query->set('post_status', array('private', 'publish'));
             }

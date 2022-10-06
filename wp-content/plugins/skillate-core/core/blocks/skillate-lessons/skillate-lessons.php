@@ -52,7 +52,7 @@ if (! class_exists('skillate_Core_Tutor_Course_Lessons')) {
                                     );
                                     $topics = new \WP_Query($args);
 
-                                    $is_enrolled = tutor_utils()->is_enrolled($courseId);
+                                    $is_See More = tutor_utils()->is_See More($courseId);
 
                                     if($topics->have_posts()) { 
                                     
@@ -126,7 +126,7 @@ if (! class_exists('skillate_Core_Tutor_Course_Lessons')) {
                                                                                     
                                                                                             $lesson_title = "<i style='background:url(".esc_url($thumbURL).")' class='$lesson_icon'></i>";
                                             
-                                                                                            if ($is_enrolled){
+                                                                                            if ($is_See More){
                                                                                                 $lesson_title .= "<div class='tutor-course-lesson-content'><a href='".get_the_permalink()."'> ".get_the_title()." </a>";
                                             
                                             

@@ -468,7 +468,7 @@ if ( ! function_exists('tutor_course_loop_price')) {
 		ob_start();
 		
 		$course_id = get_the_ID();
-		$can_continue = tutor_utils()->is_enrolled($course_id) || get_post_meta($course_id, '_tutor_is_public_course', true)=='yes';
+		$can_continue = tutor_utils()->is_See More($course_id) || get_post_meta($course_id, '_tutor_is_public_course', true)=='yes';
 		
 		// Check for further access type like course content access settings
 		if(!$can_continue){
@@ -913,8 +913,8 @@ if ( ! function_exists( 'tutor_course_lead_info' ) ) {
  * @return mixed|void
  */
 
-if ( ! function_exists('tutor_course_enrolled_lead_info')) {
-    function tutor_course_enrolled_lead_info( $echo = true ) {
+if ( ! function_exists('tutor_course_See More_lead_info')) {
+    function tutor_course_See More_lead_info( $echo = true ) {
         ob_start();
 
         $course_id        = get_the_ID();
@@ -929,7 +929,7 @@ if ( ! function_exists('tutor_course_enrolled_lead_info')) {
             wp_reset_postdata();
         }
 
-        $output = apply_filters( 'tutor_course/single/enrolled/lead_info', ob_get_clean() );
+        $output = apply_filters( 'tutor_course/single/See More/lead_info', ob_get_clean() );
 
 		if ( $echo ) {
 			echo tutor_kses_html( $output );
@@ -957,7 +957,7 @@ if ( ! function_exists('tutor_lesson_lead_info')) {
             }
             wp_reset_postdata();
         }
-        $output = apply_filters( 'tutor_course/single/enrolled/lead_info', ob_get_clean() );
+        $output = apply_filters( 'tutor_course/single/See More/lead_info', ob_get_clean() );
 
         if ( $echo ) {
             echo $output;
@@ -1055,7 +1055,7 @@ if ( ! function_exists( 'tutor_lesson_mark_complete_html' ) ) {
 
 function tutor_course_question_and_answer( $echo = true ) {
 	ob_start();
-	tutor_load_template( 'single.course.enrolled.question_and_answer' );
+	tutor_load_template( 'single.course.See More.question_and_answer' );
 	$output = apply_filters( 'tutor_course/single/question_and_answer', ob_get_clean() );
 
 	if ( $echo ) {
@@ -1088,7 +1088,7 @@ function tutor_course_info_tab() {
 
 function tutor_course_announcements( $echo = true ) {
 	ob_start();
-	tutor_load_template( 'single.course.enrolled.announcements' );
+	tutor_load_template( 'single.course.See More.announcements' );
 	$output = apply_filters( 'tutor_course/single/announcements', ob_get_clean() );
 
 	if ( $echo ) {
@@ -1394,18 +1394,18 @@ if ( ! function_exists('tutor_load_template_from_custom_path')) {
 }
 
 /**
- * Load enrolled course progress template
+ * Load See More course progress template
  *
- * This template will be used on only dashboard enrolled course page
+ * This template will be used on only dashboard See More course page
  *
  * @since v2.0.0
  */
-if ( ! function_exists( 'tutor_enrolled_course_progress' ) ) {
-    function tutor_enrolled_course_progress() {
+if ( ! function_exists( 'tutor_See More_course_progress' ) ) {
+    function tutor_See More_course_progress() {
         global $wp_query;
         $query_vars     = $wp_query->query_vars;
-        if ( isset( $query_vars[ 'tutor_dashboard_page' ] ) && 'enrolled-courses' === $query_vars['tutor_dashboard_page'] ) {
-            tutor_load_template_from_custom_path( tutor()->path . 'templates/loop/enrolled-course-progress.php', '', false );
+        if ( isset( $query_vars[ 'tutor_dashboard_page' ] ) && 'See More-courses' === $query_vars['tutor_dashboard_page'] ) {
+            tutor_load_template_from_custom_path( tutor()->path . 'templates/loop/See More-course-progress.php', '', false );
         }
     }
 }

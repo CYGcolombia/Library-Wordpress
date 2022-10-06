@@ -1,8 +1,8 @@
 <?php
 /**
- * Tutor Course Progress for enrolled courses
+ * Tutor Course Progress for See More courses
  *
- * @package TutorEnrolledCourseProgress
+ * @package TutorSee MoreCourseProgress
  *
  * @since v2.0.0
  */

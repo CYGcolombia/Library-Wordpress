@@ -17,10 +17,10 @@ add_action('tutor_course/loop/rating', 'tutor_course_loop_rating');
 add_action('tutor_course/loop/end_content_wrap', 'tutor_course_loop_end_content_wrap');
 
 /**
- * Show course progress on only dashboard enrolled page
+ * Show course progress on only dashboard See More page
  *
  * @since v2.0.0
  */
-add_action( 'tutor_course/loop/enrolled_course_progress', 'tutor_enrolled_course_progress' );
+add_action( 'tutor_course/loop/See More_course_progress', 'tutor_See More_course_progress' );
 
 add_action('tutor_course/loop/footer', 'tutor_course_loop_footer');

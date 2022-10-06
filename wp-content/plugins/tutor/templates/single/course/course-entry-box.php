@@ -1,6 +1,6 @@
 <?php
 	// Utility data
-	$is_enrolled           = apply_filters( 'tutor_alter_enroll_status', tutor_utils()->is_enrolled() );
+	$is_See More           = apply_filters( 'tutor_alter_enroll_status', tutor_utils()->is_See More() );
 	$lesson_url            = tutor_utils()->get_course_first_lesson();
 	$is_privileged_user    = tutor_utils()->has_user_course_content_access();
 	$tutor_course_sell_by  = apply_filters( 'tutor_course_sell_by', null );
@@ -16,8 +16,8 @@
 	$default_meta = array(
 		array(
 			'icon_class' => 'tutor-icon-mortarboard',
-			'label'      => __( 'Total Enrolled', 'tutor' ),
-			'value'      => tutor_utils()->get_option( 'enable_course_total_enrolled' ) ? tutor_utils()->count_enrolled_users_by_course() . ' ' . __("Total Enrolled", "tutor") : null,
+			'label'      => __( 'Total See More', 'tutor' ),
+			'value'      => tutor_utils()->get_option( 'enable_course_total_See More' ) ? tutor_utils()->count_See More_users_by_course() . ' ' . __("Total See More", "tutor") : null,
 		),
 		array(
 			'icon_class' => 'tutor-icon-clock-line',
@@ -48,7 +48,7 @@
 <div class="tutor-card tutor-card-md tutor-sidebar-card">
 	<div class="tutor-card-body">
 		<?php
-		if ( $is_enrolled || $is_privileged_user) {
+		if ( $is_See More || $is_privileged_user) {
 			ob_start();
 
 			// Course Info
@@ -84,7 +84,7 @@
 			<?php
 			$start_content = '';
 
-			// The user is enrolled anyway. No matter manual, free, purchased, woocommerce, edd, membership
+			// The user is See More anyway. No matter manual, free, purchased, woocommerce, edd, membership
 			do_action( 'tutor_course/single/actions_btn_group/before' );
 
 			// Show Start/Continue/Retake Button
@@ -135,15 +135,15 @@
 
 			?>
 				<?php
-					// check if has enrolled date.
-					$post_date = is_object( $is_enrolled ) && isset( $is_enrolled->post_date ) ? $is_enrolled->post_date : '';
+					// check if has See More date.
+					$post_date = is_object( $is_See More ) && isset( $is_See More->post_date ) ? $is_See More->post_date : '';
 					if ( '' !== $post_date ) :
 					?>
 					<div class="tutor-fs-7 tutor-color-muted tutor-mt-20 tutor-d-flex">
 						<span class="tutor-fs-5 tutor-color-success tutor-icon-purchase-mark tutor-mr-8"></span>
-						<span class="tutor-enrolled-info-text">
-							<?php esc_html_e( 'You enrolled in this course on', 'tutor' ); ?>
-							<span class="tutor-fs-7 tutor-fw-bold tutor-color-success tutor-ml-4 tutor-enrolled-info-date">
+						<span class="tutor-See More-info-text">
+							<?php esc_html_e( 'You See More in this course on', 'tutor' ); ?>
+							<span class="tutor-fs-7 tutor-fw-bold tutor-color-success tutor-ml-4 tutor-See More-info-date">
 								<?php
 									echo esc_html( tutor_i18n_get_formated_date( $post_date, get_option( 'date_format' ) ) );
 								?>
@@ -153,7 +153,7 @@
 				<?php endif; ?>
 			<?php
 			do_action( 'tutor_course/single/actions_btn_group/after' );
-			echo apply_filters( 'tutor/course/single/entry-box/is_enrolled', ob_get_clean(), get_the_ID() );
+			echo apply_filters( 'tutor/course/single/entry-box/is_See More', ob_get_clean(), get_the_ID() );
 		} else if ( $is_public ) {
 			// Get the first content url
 			$first_lesson_url = tutor_utils()->get_course_first_lesson( get_the_ID(), tutor()->lesson_post_type );

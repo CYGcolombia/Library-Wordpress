@@ -166,8 +166,8 @@ class TutorEDD extends Tutor_Base {
 				$if_has_course = tutor_utils()->product_belongs_with_course($download['id']);
 				if ($if_has_course) {
 					$course_id = $if_has_course->post_id;
-					$has_any_enrolled = tutor_utils()->has_any_enrolled($course_id, $user_id);
-					if (!$has_any_enrolled) {
+					$has_any_See More = tutor_utils()->has_any_See More($course_id, $user_id);
+					if (!$has_any_See More) {
 						tutor_utils()->do_enroll($course_id, $payment_id, $user_id);
 					}
 				}

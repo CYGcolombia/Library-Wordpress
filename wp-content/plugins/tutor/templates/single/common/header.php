@@ -1,6 +1,6 @@
 <?php
 $course_id          = isset( $course_id ) ? (int) $course_id : 0;
-$is_enrolled        = tutor_utils()->is_enrolled( $course_id );
+$is_See More        = tutor_utils()->is_See More( $course_id );
 $course_stats       = tutor_utils()->get_course_completed_percent( $course_id, 0, true );
 
 // options
@@ -34,8 +34,8 @@ if ( true === $auto_course_complete_option && false === $is_course_completed ) {
 	</div>
 
 	<div class="tutor-ml-auto tutor-align-center tutor-d-none tutor-d-xl-flex">
-		<?php if ( $is_enrolled ) : ?>
-			<?php do_action( 'tutor_course/single/enrolled/before/lead_info/progress_bar' ); ?>
+		<?php if ( $is_See More ) : ?>
+			<?php do_action( 'tutor_course/single/See More/before/lead_info/progress_bar' ); ?>
 			<div class="tutor-fs-7 tutor-mr-20">
 				<?php if ( true == get_tutor_option( 'enable_course_progress_bar' ) ) : ?>
 					<span class="tutor-progress-content tutor-color-primary-60">
@@ -51,7 +51,7 @@ if ( true === $auto_course_complete_option && false === $is_course_completed ) {
 					(<?php echo $course_stats['completed_percent'] . '%'; ?>)
 				<?php endif; ?>
 			</div>
-			<?php do_action( 'tutor_course/single/enrolled/after/lead_info/progress_bar' ); ?>
+			<?php do_action( 'tutor_course/single/See More/after/lead_info/progress_bar' ); ?>
             <?php
                 if ( $show_mark_complete ) {
                     tutor_lesson_mark_complete_html();
