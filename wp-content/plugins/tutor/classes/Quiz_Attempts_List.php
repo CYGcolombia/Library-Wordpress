@@ -199,7 +199,7 @@ class Quiz_Attempts_List {
 	}
 
 	/**
-	 * Count See More number by status & filters
+	 * Count enrolled number by status & filters
 	 * Count all enrolment | approved | cancelled
 	 *
 	 * @param string $status | required.

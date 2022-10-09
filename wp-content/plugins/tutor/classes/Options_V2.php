@@ -534,7 +534,7 @@ class Options_V2
 								'label'       => __('Auto redirect to courses', 'tutor'),
 								'default'     => 'off',
 								'label_title' => __('', 'tutor'),
-								'desc'        => __('When a user\'s WooCommerce order is auto-completed, they will be redirected to See More courses', 'tutor'),
+								'desc'        => __('When a user\'s WooCommerce order is auto-completed, they will be redirected to enrolled courses', 'tutor'),
 							),
 							array(
 								'key'         => 'enable_spotlight_mode',
@@ -550,7 +550,7 @@ class Options_V2
 								'label'       => __('Auto Course Complete on all Lesson Completion', 'tutor'),
 								'default'     => 'off',
 								'label_title' => __('', 'tutor'),
-								'desc'        => __('If enabled, an See More Course will be automatically completed if all its Lessions, Quizzes, and Assignments are already completed by the Student', 'tutor'),
+								'desc'        => __('If enabled, an Enrolled Course will be automatically completed if all its Lessions, Quizzes, and Assignments are already completed by the Student', 'tutor'),
 							),
 							array(
 								'key'            => 'course_completion_process',
@@ -1044,12 +1044,12 @@ class Options_V2
 										'desc'        => __('Enable to show course duration', 'tutor'),
 									),
 									array(
-										'key'         => 'enable_course_total_See More',
+										'key'         => 'enable_course_total_enrolled',
 										'type'        => 'toggle_single',
-										'label'       => __('Total See More', 'tutor'),
+										'label'       => __('Total Enrolled', 'tutor'),
 										'label_title' => __('Enable', 'tutor'),
 										'default'     => 'on',
-										'desc'        => __('Enable to show total See More students', 'tutor'),
+										'desc'        => __('Enable to show total enrolled students', 'tutor'),
 									),
 									array(
 										'key'         => 'enable_course_update_date',

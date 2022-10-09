@@ -126,7 +126,7 @@ $filters = array(
 									</span>
 								</td>
 								<td>
-									<?php $course_taken = tutor_utils()->get_See More_courses_ids_by_user( $list->ID ); ?>
+									<?php $course_taken = tutor_utils()->get_enrolled_courses_ids_by_user( $list->ID ); ?>
 									<span class="tutor-fs-7"><?php echo esc_html( is_array( $course_taken ) ? count( $course_taken ) : 0 ); ?></span>
 								</td>
 								<td>

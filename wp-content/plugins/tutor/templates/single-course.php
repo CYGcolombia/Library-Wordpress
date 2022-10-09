@@ -29,7 +29,7 @@ if (!is_user_logged_in() && !$is_public && $student_must_login_to_view_course){
 <?php do_action('tutor_course/single/before/wrap'); ?>
 <div <?php tutor_post_class('tutor-full-width-course-top tutor-course-top-info tutor-page-wrap tutor-wrap-parent'); ?>>
     <div class="tutor-course-details-page tutor-container">
-        <?php (isset($is_See More) && $is_See More) ? tutor_course_See More_lead_info() : tutor_course_lead_info(); ?>
+        <?php (isset($is_enrolled) && $is_enrolled) ? tutor_course_enrolled_lead_info() : tutor_course_lead_info(); ?>
         <div class="tutor-row tutor-gx-xl-5">
             <main class="tutor-col-xl-8">
                 <?php tutor_utils()->has_video_in_single() ? tutor_course_video() : get_tutor_course_thumbnail(); ?>
@@ -37,7 +37,7 @@ if (!is_user_logged_in() && !$is_public && $student_must_login_to_view_course){
                 <div class="tutor-course-details-tab tutor-mt-32">
                     <?php if ( is_array( $course_nav_item ) && count( $course_nav_item ) > 1 ) : ?>
                         <div class="tutor-is-sticky">
-                            <?php tutor_load_template( 'single.course.See More.nav', array('course_nav_item' => $course_nav_item ) ); ?>
+                            <?php tutor_load_template( 'single.course.enrolled.nav', array('course_nav_item' => $course_nav_item ) ); ?>
                         </div>
                     <?php endif; ?>
                     <div class="tutor-tab tutor-pt-24">

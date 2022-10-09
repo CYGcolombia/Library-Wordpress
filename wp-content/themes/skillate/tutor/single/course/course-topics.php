@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 $topics = tutor_utils()->get_topics();
 $course_id = get_the_ID();
-$is_See More = tutor_utils()->is_See More($course_id);
+$is_enrolled = tutor_utils()->is_enrolled($course_id);
 ?>
 <?php do_action('tutor_course/single/before/topics'); ?>
 <?php if($topics->have_posts()) { ?>
@@ -86,7 +86,7 @@ $is_See More = tutor_utils()->is_See More($course_id);
                                         <h5>
 											<?php
                                                 $lesson_title = "<i style='background:url(".esc_url($thumbURL).")' class='$lesson_icon'></i>";
-                                                if ($is_See More){
+                                                if ($is_enrolled){
 	                                                $lesson_title .= "<div class='tutor-course-lesson-content'><a href='".get_the_permalink()."'> ".get_the_title()." </a>";
 													$lesson_title .= $play_time ? "<span class='tutor-lesson-duration'>$play_time</span></div>" : '';
 													if($is_completed_lesson){

@@ -4,6 +4,6 @@
      * @version 1.4.3
      */
 
-    $active_tab = 'See More-courses/active-courses';
-    include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'See More-courses.php';
+    $active_tab = 'enrolled-courses/active-courses';
+    include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'enrolled-courses.php';
 ?>

@@ -165,7 +165,7 @@ Create online courses with the new Gutenberg editor without facing any issues wh
 
 = VIDEO CONTENT SECURITY =
 
-Have the most secure learning management system when creating your online courses. Third parties cannot view the videos with the URL when you use our WordPress LMS plugin. It ensures that only See More students can have access to course videos.
+Have the most secure learning management system when creating your online courses. Third parties cannot view the videos with the URL when you use our WordPress LMS plugin. It ensures that only enrolled students can have access to course videos.
 
 = PREMIUM FEATURE FOR TUTOR =
 
@@ -251,7 +251,7 @@ Fix: An unnecessary alert message was appearing on the "Become an Instructor" pa
 Fix: When strict mode is on, it was showing Wrong Alert Text
 Fix: The Empty Data Alert Message on the Course Analytics page was not translatable
 Fix: The "Assignment Submitted" date-time was showing as per GMT but not Site's Time on the Assignment Details page of WP Admin
-Fix: See More users were able to see all the plans when Paid Membership Pro is Enable
+Fix: Enrolled users were able to see all the plans when Paid Membership Pro is Enable
 Fix: Course Content Access option for Admin and Instructor was not working with Paid Membership Pro
 Fix: Other roles except Admin (like Editor) were not being able to access WP Admin when Hide Admin Bar is enabled
 Fix: Copied Course Assignments were not deletable from the Assignments page on the Front-site
@@ -311,7 +311,7 @@ Fix: The Wishlist icon was not showing that a course is on the wishlist
 Fix: In a student's individual Report page the Enroll Date was showing wrong
 Fix: When editing a Quiz, the "Default" option was not staying active by default
 Fix: On the Course Details page any language other than English was causing the “Last Updated” time to show incorrectly
-Fix: On the See More Courses page under the “Completed Courses” tab, course blocks were showing incorrect button names in case of Restrict Content
+Fix: On the Enrolled Courses page under the “Completed Courses” tab, course blocks were showing incorrect button names in case of Restrict Content
 Fix: In Content Drip, in the “Content available after X days from enrolment" option, the number field to set days was too narrow
 Fix: On some websites, in the case of Lesson, the default "Featured Image" was not appearing on the Lesson's page in the Course Journey
 Fix: Video tab collapse was not working in the Course Builder
@@ -391,7 +391,7 @@ Fix: "Abandon Quiz" Modal was appearing for the wrong action
 Fix: The announcement could have been created without selecting a course
 Fix: Deleting a student was deleting their user account too
 Fix: Bulk Actions was not working in the courses, instructors, students' page
-Fix: A student was being See More in the same course multiple times
+Fix: A student was being enrolled in the same course multiple times
 Fix: The Tutor Free Download link was wrong when only Tutor Pro was active
 Fix: Lesson Page container was being narrow on some Screens
 Fix: WP Editor was not working while creating a lesson
@@ -612,7 +612,7 @@ New: Download option of reports for the instructors in CSV format
 New: Pagination settings for Tutor shortcodes added
 Update: Security enhancements
 Fix: Withdrawal message shown for students/non-approved instructors
-Fix: Disabling total See More number issue in the course page
+Fix: Disabling total enrolled number issue in the course page
 Fix: Date picker format not applying issue for all the places in Tutor LMS
 Fix: On reveal mode for Quiz, user couldn't go forward if the answer was wrong
 Fix: User can type characters in the date field
@@ -623,7 +623,7 @@ Fix: View Quiz Attempts URL show nothing when clicked
 New: Review counts (given and received) in the dashboard review section's tabs
 New: Approval email notification to instructors for their submitted courses
 New: Auto-enrollment after registering from the "Enroll Now" button
-New: See More course count in a separate column in the Student's list
+New: Enrolled course count in a separate column in the Student's list
 Fix: Shortcode to show instructor list not working issue
 Fix: PHP error generating from undefined variable $default
 Fix: Assignment of duplicate courses redirecting to the original course assignment issue
@@ -667,7 +667,7 @@ Fix: Student can submit the quiz even after time limit is expired
 Fix: Email event list checkboxes not showing in dashboard if WPML add-on enabled
 Fix: Course progress not deleting when enrolment is deleted
 Fix: Quiz not showing immediately after creating in course builder
-Fix: Lesson count shows 0 in See More courses on the frontend dashboard
+Fix: Lesson count shows 0 in enrolled courses on the frontend dashboard
 Fix: XSS vulnerability in student list in the dashboard
 Fix: The option “When time expires” fixed in Quiz settings
 
@@ -710,7 +710,7 @@ Fix: XSS vulnerability in announcement summary
 
 = 1.9.1 - June 04, 2021 =
 
-New: Enable/disable auto redirection to See More courses on auto order completion
+New: Enable/disable auto redirection to enrolled courses on auto order completion
 Fix: Parameter count in plugin activated hook
 Fix: Zoom meeting redirecting to post list while saving
 Fix: Students can no longer give feedback without selecting star rating
@@ -722,7 +722,7 @@ New: tutor_quiz/single/after/wrap hook added in single quiz template
 New: Video duration will be automatically fetched when inserting lesson videos
 New: Filter hook added to course filter
 New: Static texts in JS files are now translatable
-New: Automatic order completion redirects to See More Courses
+New: Automatic order completion redirects to Enrolled Courses
 Update: Button text changed for rejecting instructor requests
 Update: Default course count per page changed to 12 from 3
 Fix: Dashboard shortcode not working
@@ -907,7 +907,7 @@ Fix: Showed wrong information for multiple pages for the Students list in the Da
 Fix: Student's name didn't show up when downloading the certificate as a PDF.
 Fix: Grammatical corrections in the enrolment section of the course page.
 Fix: The course was displaying free even when it was part of a membership package.
-Fix: Course dependent on Paid Membership plugin got canceled after a user See More in it.
+Fix: Course dependent on Paid Membership plugin got canceled after a user enrolled in it.
 Fix: Backslashes issue in quiz question answer title multiple type question answer titles
 Fix: Conflict issue with BuddyPress, BuddyBoss that showed 404 page
 
@@ -985,7 +985,7 @@ do_action('tutor_announcements/after/save', $announcement_id);
 do_action('tutor_quiz/attempt/submitted/feedback', $attempt_id);
 ```
 New: Added helper method `tutils()->get_enrolment_by_enrol_id($enrol_id)` to get enrollment details by enrolid
-New: Added helper method `tutils()->get_student_emails_by_course_id($course_id)` to get array list of See More user emails
+New: Added helper method `tutils()->get_student_emails_by_course_id($course_id)` to get array list of enrolled user emails
 Update: User can disable Tutor LMS native login system
 Update: ImageMagick dependency removed from certificate generator
 Update: Option added to control course content access for instructors and administrators

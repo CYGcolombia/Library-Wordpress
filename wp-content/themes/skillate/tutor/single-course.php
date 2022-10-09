@@ -14,7 +14,7 @@ get_header();
 global $post;
 $idd = get_the_ID();
 $user_id = get_current_user_id();
-$is_See More = tutor_utils()->is_See More();
+$is_enrolled = tutor_utils()->is_enrolled();
 $is_announcement_enabled = tutor_utils()->get_option('enable_course_announcements');
 $is_completed_course = tutor_utils()->is_completed_course();
 $is_completed = tutor_utils()->is_completed_course($idd, $user_id);
@@ -219,13 +219,13 @@ foreach ($total_posts as $total_post) {
                     </a>
                 <?php } ?>
 
-                <?php if ($is_See More || $is_privileged_user) { ?>
+                <?php if ($is_enrolled || $is_privileged_user) { ?>
                     <a class="course-content-tab-link" href="#tab-qa">
                         <?php echo esc_html__('Q&A', 'skillate'); ?>
                     </a>
                 <?php } ?>
 
-                <?php if ($is_See More || $is_privileged_user) { ?>
+                <?php if ($is_enrolled || $is_privileged_user) { ?>
                     <a class="course-content-tab-link" href="#tab-attachments">
                         <?php echo esc_html__('Attachments', 'skillate'); ?>
                     </a>
@@ -276,7 +276,7 @@ foreach ($total_posts as $total_post) {
                     $display_course_instructors = tutor_utils()->get_option('display_course_instructors');
                     if ($display_course_instructors == 1) { ?>
                         <div id="tab-instructor">
-                            <?php do_action('tutor_course/single/See More/before/instructors');
+                            <?php do_action('tutor_course/single/enrolled/before/instructors');
                             $instructors = tutor_utils()->get_instructors_by_course();
                             if ($instructors) {
                             ?>
@@ -357,11 +357,11 @@ foreach ($total_posts as $total_post) {
                                 </div>
                             <?php
                             }
-                            do_action('tutor_course/single/See More/after/instructors'); ?>
+                            do_action('tutor_course/single/enrolled/after/instructors'); ?>
                         </div>
                     <?php } ?>
 
-                    <?php if ($is_See More || $is_privileged_user) { ?>
+                    <?php if ($is_enrolled || $is_privileged_user) { ?>
                         <div id="tab-announcements">
                             <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php echo _e('Announcements', 'skillate'); ?></h4>
                             <?php tutor_course_announcements(); ?>
@@ -369,14 +369,14 @@ foreach ($total_posts as $total_post) {
                         </div>
                     <?php } ?>
 
-                    <?php if ($is_See More || $is_privileged_user) { ?>
+                    <?php if ($is_enrolled || $is_privileged_user) { ?>
                         <div id="tab-attachments">
                             <h4 class="tutor-course-details-widget-title tutor-fs-5 tutor-color-black tutor-fw-bold tutor-mb-16"><?php echo _e('Attachments', 'skillate'); ?></h4>
                             <?php get_tutor_posts_attachments(); ?>
                         </div>
                     <?php } ?>
 
-                    <?php if ($is_See More || $is_privileged_user) { ?>
+                    <?php if ($is_enrolled || $is_privileged_user) { ?>
                         <div id="tab-qa">
                             <?php
                             $disable_qa_for_this_course = get_post_meta($post->ID, '_tutor_enable_qa', true) != 'yes';

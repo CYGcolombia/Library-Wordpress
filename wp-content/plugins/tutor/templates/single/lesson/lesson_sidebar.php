@@ -27,7 +27,7 @@ $course_id   = tutor_utils()->get_course_id_by_subcontent($post->ID);
 $user_id                      = get_current_user_id();
 $enable_qa_for_this_course    = get_post_meta($course_id, '_tutor_enable_qa', true) == 'yes';
 $enable_q_and_a_on_course     = tutor_utils()->get_option('enable_q_and_a_on_course') && $enable_qa_for_this_course;
-$is_See More                  = tutor_utils()->is_See More($course_id);
+$is_enrolled                  = tutor_utils()->is_enrolled($course_id);
 $is_instructor_of_this_course = tutor_utils()->has_user_course_content_access($user_id, $course_id);
 $is_user_admin                = current_user_can('administrator');
 ?>
@@ -91,14 +91,14 @@ if ($topics->have_posts()) {
 			<div class="tutor-accordion-item-body" style="<?php echo $is_topic_active ? ' display: block;' : 'display: none;'; ?>">
 				<?php
 				do_action('tutor/lesson_list/before/topic', $topic_id);
-				$is_See More = tutor_utils()->is_See More($course_id, get_current_user_id());
+				$is_enrolled = tutor_utils()->is_enrolled($course_id, get_current_user_id());
 				
 				// Loop through lesson, quiz, assignment, zoom lesson
 				while ($lessons->have_posts()) {
 					$lessons->the_post();
 					$is_public_course 	= \TUTOR\Course_List::is_public($course_id);
 					
-					$show_permalink = !$_is_preview || $is_See More || get_post_meta($post->ID, '_is_preview', true) || $is_public_course || $is_instructor_of_this_course;
+					$show_permalink = !$_is_preview || $is_enrolled || get_post_meta($post->ID, '_is_preview', true) || $is_public_course || $is_instructor_of_this_course;
 					$show_permalink = apply_filters( 'tutor_course/single/content/show_permalink', $show_permalink, get_the_ID() );
 
 					$lock_icon = !$show_permalink;

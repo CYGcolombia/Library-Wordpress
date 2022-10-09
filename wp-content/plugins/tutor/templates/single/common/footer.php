@@ -8,10 +8,10 @@ $previous_id        = $contents->previous_id;
 $next_id            = $contents->next_id;
 $prev_is_preview    = get_post_meta( $previous_id, '_is_preview', true );
 $next_is_preview    = get_post_meta( $next_id, '_is_preview', true );
-$is_See More        = tutor_utils()->is_See More( $course_id );
+$is_enrolled        = tutor_utils()->is_enrolled( $course_id );
 $is_public          = get_post_meta( $course_id, '_tutor_is_public_course', true );
-$prev_is_locked     = !($is_See More || $prev_is_preview || $is_public);
-$next_is_locked     = !($is_See More || $next_is_preview || $is_public);
+$prev_is_locked     = !($is_enrolled || $prev_is_preview || $is_public);
+$next_is_locked     = !($is_enrolled || $next_is_preview || $is_public);
 $prev_link          = $prev_is_locked || !$previous_id ? '#' : get_the_permalink( $previous_id );
 $next_link          = $next_is_locked || !$next_id ? '#' : get_the_permalink( $next_id );
 ?>

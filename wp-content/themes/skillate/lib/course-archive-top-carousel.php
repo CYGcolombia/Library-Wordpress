@@ -91,7 +91,7 @@
                                     $output .= '<div class="tutor-course-grid-meta"><span class="tutor-course-grid-level">' . get_tutor_course_level( get_the_ID() ) . '</span>';
                                     $output .= '<span class="tutor-course-duration">' . get_tutor_course_duration_context_skillate( get_the_ID() ) . '</span> </div>';
                                     $course_id = get_the_ID();
-                                    $See More = tutor_utils()->is_See More( get_the_ID());
+                                    $enrolled = tutor_utils()->is_enrolled( get_the_ID());
                                     $is_administrator      = tutor_utils()->has_user_role( 'administrator' );
                                     $is_instructor         = tutor_utils()->is_instructor_of_this_course();
                                     $course_content_access = (bool) get_tutor_option( 'course_content_access_for_ia' );
@@ -102,11 +102,11 @@
                                     if($is_privileged_user){
                                         $output .= '<a href="' . esc_url( $first_lesson_url ) .'" class="btn btn-classic btn-no-fill">' . __( 'Start Learning','skillate' ) . '</a>';
                                     }else{
-                                        if ( tutor_utils()->is_course_purchasable() && !$See More) {
+                                        if ( tutor_utils()->is_course_purchasable() && !$enrolled) {
                                             $output .= tutor_course_loop_add_to_cart( false );
                                         } else {
-                                            if ( tutor_utils()->is_See More( get_the_ID() ) ) {
-                                                $output .= '<a href="' . esc_url( get_the_permalink( get_the_ID() ) ) .'" class="btn btn-classic btn-no-fill">' . __( 'See More','skillate' ) . '</a>';
+                                            if ( tutor_utils()->is_enrolled( get_the_ID() ) ) {
+                                                $output .= '<a href="' . esc_url( get_the_permalink( get_the_ID() ) ) .'" class="btn btn-classic btn-no-fill">' . __( 'Enrolled','skillate' ) . '</a>';
                                             } else {
                                                 $output .= '<a href="' . esc_url( get_the_permalink( get_the_ID() ) ) . '" class="btn btn-classic btn-no-fill">' . __( 'Enroll Now','skillate' ) . '</a>';
                                             }

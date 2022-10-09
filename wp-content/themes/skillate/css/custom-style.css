@@ -680,7 +680,7 @@ a.added_to_cart.wc-forward {
 	padding: 6px;
 }
 
-.skillate-course-cart-btn.See More .tutor-btn:not(.tutor-is-icon-btn) {
+.skillate-course-cart-btn.enrolled .tutor-btn:not(.tutor-is-icon-btn) {
 	/* width: auto;
 	background-color: #fc5249;
 	border: 0;
@@ -712,7 +712,7 @@ a.added_to_cart.wc-forward {
 	.skillate-course-cart-btn .product_type_simple {
 		margin-left: 0px !important;
 	}
-	.skillate-course-cart-btn.See More .tutor-btn:not(.tutor-is-icon-btn) {
+	.skillate-course-cart-btn.enrolled .tutor-btn:not(.tutor-is-icon-btn) {
 		width: 100%;
 		left: 0;
 	}

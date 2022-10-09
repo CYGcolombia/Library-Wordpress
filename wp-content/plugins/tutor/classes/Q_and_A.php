@@ -238,7 +238,7 @@ class Q_and_A {
 	public static function load_more() {
 		tutor_utils()->checking_nonce();
 		ob_start();
-		tutor_load_template( 'single.course.See More.question_and_answer' );
+		tutor_load_template( 'single.course.enrolled.question_and_answer' );
 		$html = ob_get_clean();
 		wp_send_json_success( array('html' => $html) );
 	}

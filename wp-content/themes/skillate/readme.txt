@@ -74,7 +74,7 @@ the directory of the stable readme.txt, so in this case, ` https://themes.svn.wo
 * Update: Many design responsiveness issues are improved
 * Update: RTL design issues are improved
 * Update: Many design broken issues on different Tutor pages are improved
-* Fix: "Enroll Now" button was appearing if even a student is See More to a Course
+* Fix: "Enroll Now" button was appearing if even a student is enrolled to a Course
 * Fix: HTML5 Video player's duration wouldn't appear on the Course Details page
 * Fix: "Add to Cart" button was appearing twice in Mobile View
 * Fix: YouTube Player was unable to show Videos
@@ -86,7 +86,7 @@ the directory of the stable readme.txt, so in this case, ` https://themes.svn.wo
 * Fix: Link to Instructor Profile was redirecting visitor to Student Profile page
 * Fix: Announcement was appearing on the Single Course page, though it is disabled from Admin panel
 * Fix: Course Attachments were not appearing on the Single Course page
-* Fix: "Add to Cart" button was appearing if even a student is See More to a Course
+* Fix: "Add to Cart" button was appearing if even a student is enrolled to a Course
 * Fix: "Course Content Access" option was not working for Instructors and Admins
 * Fix: On "Course Content Access" mode, the "Q&A", "Resources" tabs were not appearing for Instructors and Admins
 * Fix: "View Certificate" button was appearing if even the course is not started yet
@@ -114,7 +114,7 @@ the directory of the stable readme.txt, so in this case, ` https://themes.svn.wo
 * Fix: Front-end Instructors List page layout issue
 * Fix: Number of courses counting mechanism was not correct
 * Fix: Admin profile page data and design issue
-* Fix: Enroll now button while already See More in a course
+* Fix: Enroll now button while already enrolled in a course
 * Fix: Review section multiple button appearance issue
 * Fix: Creative E-learning demo layout issue
 * Fix: PHP error in demo importer

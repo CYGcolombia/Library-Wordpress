@@ -199,7 +199,7 @@ class Template extends Tutor_Base {
 			setup_postdata( $page_id );
 
 			if ( is_user_logged_in() ) {
-				$has_content_access = tutor_utils()->has_See More_content_access( 'lesson' );
+				$has_content_access = tutor_utils()->has_enrolled_content_access( 'lesson' );
 				if ( $has_content_access ) {
 					$template = tutor_get_template( 'single-lesson' );
 				} else {
@@ -243,7 +243,7 @@ class Template extends Tutor_Base {
 				exit();
 			}
 
-			if ( tutor_utils()->is_course_See More_by_lesson() ) {
+			if ( tutor_utils()->is_course_enrolled_by_lesson() ) {
 				$video_info = tutor_utils()->get_video_info();
 				if ( $video_info ) {
 					$stream = new Video_Stream( $video_info->path );
@@ -367,11 +367,11 @@ class Template extends Tutor_Base {
 
 		if ( $wp_query->is_single && ! empty( $wp_query->query_vars['post_type'] ) && $wp_query->query_vars['post_type'] === 'tutor_quiz' ) {
 			if ( is_user_logged_in() ) {
-				$has_content_access = tutor_utils()->has_See More_content_access( 'quiz' );
+				$has_content_access = tutor_utils()->has_enrolled_content_access( 'quiz' );
 				$course_id          = tutor_utils()->get_course_id_by_content( $post );
 				$is_public          = Course_List::is_public( $course_id );
 
-				// if public course don't need to be See More.
+				// if public course don't need to be enrolled.
 				if ( $has_content_access || $is_public ) {
 					$template = tutor_get_template( 'single-quiz' );
 				} else {
@@ -390,7 +390,7 @@ class Template extends Tutor_Base {
 
 		if ( $wp_query->is_single && ! empty( $wp_query->query_vars['post_type'] ) && $wp_query->query_vars['post_type'] === 'tutor_assignments' ) {
 			if ( is_user_logged_in() ) {
-				$has_content_access = tutor_utils()->has_See More_content_access( 'assignment' );
+				$has_content_access = tutor_utils()->has_enrolled_content_access( 'assignment' );
 				if ( $has_content_access ) {
 					$template = tutor_get_template( 'single-assignment' );
 				} else {

@@ -1292,7 +1292,7 @@ class Quiz {
 
 		$quiz_id = (int) tutor_utils()->avalue_dot( 'quiz_id', $_POST );
 
-		if(!tutor_utils()->has_See More_content_access('quiz', $quiz_id)) {
+		if(!tutor_utils()->has_enrolled_content_access('quiz', $quiz_id)) {
 			wp_send_json_error( array('message'=>__('Access Denied.', 'tutor')) );
 		}
 

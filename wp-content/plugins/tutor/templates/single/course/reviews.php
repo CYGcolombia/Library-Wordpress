@@ -22,7 +22,7 @@ $offset = ($current_page - 1) * $per_page;
 
 $current_user_id = get_current_user_id();
 $course_id = isset($_POST['course_id']) ? (int)$_POST['course_id'] : get_the_ID();
-$is_See More = tutor_utils()->is_See More($course_id, $current_user_id);
+$is_enrolled = tutor_utils()->is_enrolled($course_id, $current_user_id);
 
 $reviews = tutor_utils()->get_course_reviews($course_id, $offset, $per_page, false, array('approved'), $current_user_id);
 $reviews_total = tutor_utils()->get_course_reviews($course_id, null, null, true, array('approved'), $current_user_id);
@@ -35,7 +35,7 @@ if(isset($_POST['course_id'])) {
 	return;
 }
 
-do_action( 'tutor_course/single/See More/before/reviews' );
+do_action( 'tutor_course/single/enrolled/before/reviews' );
 ?>
 
 <div class="tutor-pagination-wrapper-replaceable">
@@ -112,7 +112,7 @@ do_action( 'tutor_course/single/See More/before/reviews' );
 
 	<div class="tutor-row tutor-mt-40 tutor-mb-20">
 		<div class="tutor-col">
-			<?php if($is_See More): ?>
+			<?php if($is_enrolled): ?>
 				<button class="tutor-btn tutor-btn-primary write-course-review-link-btn">
 					<i class="tutor-icon-star-line tutor-mr-8"></i>
 					<?php
@@ -145,8 +145,8 @@ do_action( 'tutor_course/single/See More/before/reviews' );
 	</div>
 </div>
 
-<?php if($is_See More): ?>
-	<div class="tutor-course-See More-review-wrap tutor-pt-16">
+<?php if($is_enrolled): ?>
+	<div class="tutor-course-enrolled-review-wrap tutor-pt-16">
 		<div class="tutor-write-review-form" style="display: none;">
 			<form method="post">
 				<div class="tutor-star-rating-container">
@@ -174,4 +174,4 @@ do_action( 'tutor_course/single/See More/before/reviews' );
 	</div>
 <?php endif; ?>
 
-<?php do_action( 'tutor_course/single/See More/after/reviews' ); ?>
+<?php do_action( 'tutor_course/single/enrolled/after/reviews' ); ?>

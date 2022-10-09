@@ -117,15 +117,15 @@ tutor_utils()->tutor_custom_header();
 							</span>
 						<?php
 					} else {
-						$See More_course = tutor_utils()->get_See More_courses_by_user( $user_id );
-						$enrol_count     = is_object( $See More_course ) ? $See More_course->found_posts : 0;
+						$enrolled_course = tutor_utils()->get_enrolled_courses_by_user( $user_id );
+						$enrol_count     = is_object( $enrolled_course ) ? $enrolled_course->found_posts : 0;
 
 						$complete_count = tutor_utils()->get_completed_courses_ids_by_user( $user_id );
 						$complete_count = $complete_count ? count( $complete_count ) : 0;
 						?>
 							<span>
 								<span><?php echo $enrol_count; ?></span> 
-							<?php $enrol_count > 1 ? _e( 'Courses See More', 'tutor' ) : _e( 'Course See More', 'tutor' ); ?>
+							<?php $enrol_count > 1 ? _e( 'Courses Enrolled', 'tutor' ) : _e( 'Course Enrolled', 'tutor' ); ?>
 							</span>
 							<span><span>•</span></span>
 							<span>

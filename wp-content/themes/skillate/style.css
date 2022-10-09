@@ -17,6 +17,50 @@ Tags: blog, e-commerce, portfolio, custom-background, custom-header, full-width-
 /* -------------------------------------- *
 *           Default WP CSS                *
 * --------------------------------------- */
+/* modificado por christian vargas */
+.price {
+	display: none !important;
+}
+
+.tutor-ratings-stars {
+   display: none !important;
+}
+
+.tutor-single-rating-count {
+   display: none !important;
+}
+
+.best-sell-tag {
+  display: none !important;
+}
+
+.course-archive-single-meta{
+  display: none !important;
+}
+
+.course-archive-author{
+  display: none !important;
+}
+
+.skillate-course-enroll-btn{
+  display: none !important;
+}
+
+.skillate-tab-menu-wrap{
+	display: none !important;
+}
+
+.tutor-course-topics-header > .tutor-course-topics-header-left{
+	display: none !mportant;
+}
+
+.skillate-single-course-sidebar{
+	display: none !mportant;
+}
+
+.tutor-course-topics-header{
+		display: none !mportant;
+}
 
 a {
 	text-decoration: none !important;
@@ -1644,7 +1688,7 @@ a.course-content-tab-link {
 	margin: 20px 0px 0px !important;
 	width: 100% !important;
 }
-.skillate-course-cart-btn.See More .tutor-btn.tutor-is-fullwidth {
+.skillate-course-cart-btn.enrolled .tutor-btn.tutor-is-fullwidth {
 	width: 50%;
 	left: 50%;
 }

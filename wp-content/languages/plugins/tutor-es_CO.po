@@ -522,7 +522,7 @@ msgid "Keyword Search"
 msgstr "Búsqueda por palabra clave"
 
 #: templates/public-profile.php:128
-msgid "Courses See More"
+msgid "Courses Enrolled"
 msgstr "Cursos Inscritos"
 
 #: templates/public-profile.php:133
@@ -1558,7 +1558,7 @@ msgid "Add new instructor"
 msgstr "Añadir un nuevo instructor"
 
 #: classes/Utils.php:9333 templates/dashboard/question-answer.php:36
-#: templates/single/course/See More/question_and_answer.php:95
+#: templates/single/course/enrolled/question_and_answer.php:95
 #: views/pages/question_answer.php:41
 msgid "Question & Answer"
 msgstr "Pregunta y respuesta"
@@ -2914,7 +2914,7 @@ msgid "Create Course"
 msgstr "Crear curso"
 
 #: classes/Utils.php:2361 templates/public-profile.php:128
-msgid "Course See More"
+msgid "Course Enrolled"
 msgstr "Inscritos en el curso"
 
 #: classes/Quiz.php:1030 views/modal/question_answer_form.php:36
@@ -3375,7 +3375,7 @@ msgstr "Última actualización"
 
 #: classes/Options_V2.php:1049 templates/single/course/course-entry-box.php:19
 #: templates/single/course/course-entry-box.php:20
-msgid "Total See More"
+msgid "Total Enrolled"
 msgstr "TotaI de inscritos"
 
 #: classes/Admin.php:87 views/pages/course-list.php:162
@@ -3558,7 +3558,7 @@ msgid "User Name"
 msgstr "Nombre de usuario"
 
 #: templates/dashboard/dashboard.php:343
-msgid "See More"
+msgid "Enrolled"
 msgstr "Inscritos"
 
 #: templates/dashboard/dashboard.php:340
@@ -3812,12 +3812,12 @@ msgid "Q&A"
 msgstr "P y R"
 
 #: templates/dashboard/dashboard.php:182
-#: templates/dashboard/See More-courses.php:19
+#: templates/dashboard/enrolled-courses.php:19
 msgid "Completed Courses"
 msgstr "Cursos completados"
 
 #: templates/dashboard/dashboard.php:169
-#: templates/dashboard/See More-courses.php:18
+#: templates/dashboard/enrolled-courses.php:18
 msgid "Active Courses"
 msgstr "Cursos activos"
 
@@ -3826,8 +3826,8 @@ msgid "All Courses"
 msgstr "Todos los cursos"
 
 #: classes/Utils.php:9313 templates/dashboard/dashboard.php:156
-#: templates/dashboard/See More-courses.php:17
-msgid "See More Courses"
+#: templates/dashboard/enrolled-courses.php:17
+msgid "Enrolled Courses"
 msgstr "Cursos inscritos"
 
 #: templates/dashboard/settings/reset-password.php:31

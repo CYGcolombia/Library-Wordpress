@@ -743,11 +743,11 @@ responsive
 		margin-bottom: 20px;
 	}
 
-	.tutor-course-See More-review-wrap {
+	.tutor-course-enrolled-review-wrap {
 		margin-bottom: 30px;
 	}
 
-	.tutor-course-See More-review-wrap {
+	.tutor-course-enrolled-review-wrap {
 		margin-bottom: 30px;
 	}
 
@@ -1550,7 +1550,7 @@ responsive
 	.package-include-content h4 {
 		padding: 0;
 	}
-	.course-single-2-review-wrap .tutor-course-See More-review-wrap {
+	.course-single-2-review-wrap .tutor-course-enrolled-review-wrap {
 		float: none;
 	}
 	.course-single-2-review-wrap .tutor-write-review-form,
@@ -1630,12 +1630,12 @@ responsive
 	.skillate-single-course-sidebar .skillate-course-cart-btn {
 		margin-top: 30px;
 	}
-	.tutor-course-See More-review-wrap {
+	.tutor-course-enrolled-review-wrap {
 		margin-bottom: 0;
 		float: left;
 		margin-top: 0px;
 	}
-	.tutor-course-See More-review-wrap .write-course-review-link-btn {
+	.tutor-course-enrolled-review-wrap .write-course-review-link-btn {
 		margin-bottom: 0;
 	}
 	.skillate-single-course-sidebar.sidebar-sticky {

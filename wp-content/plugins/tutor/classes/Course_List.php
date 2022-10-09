@@ -385,7 +385,7 @@ class Course_List {
                     AND enroll.post_status = %s
                     AND enroll.post_parent = %d
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$course_id
 			)

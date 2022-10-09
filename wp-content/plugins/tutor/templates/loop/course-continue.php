@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Course loop continue when See More
+ * Course loop continue when enrolled
  *
  * @since v.1.7.4
  * @author themeum

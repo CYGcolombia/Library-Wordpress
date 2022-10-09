@@ -82,10 +82,10 @@ class Course extends Tutor_Base {
 		$this->filter_product_in_shop_page();
 
         /**
-         * Remove the course price if See More
+         * Remove the course price if enrolled
          * @since 1.5.8
          */
-		add_filter('tutor_course_price', array($this, 'remove_price_if_See More'));
+		add_filter('tutor_course_price', array($this, 'remove_price_if_enrolled'));
 
         /**
          * Remove course complete button if course completion is strict mode
@@ -530,7 +530,7 @@ class Course extends Tutor_Base {
 		}
 
 		if ( $column === 'students' ) {
-			echo tutor_utils()->count_See More_users_by_course( $post_id );
+			echo tutor_utils()->count_enrolled_users_by_course( $post_id );
 		}
 
 		if ( $column === 'price' ) {
@@ -1036,11 +1036,11 @@ class Course extends Tutor_Base {
 		}
 
 		// Whether enrolment require
-		$is_See More = tutor_utils()->is_See More();
+		$is_enrolled = tutor_utils()->is_enrolled();
 
-		return array_filter($items, function($item) use($is_See More) {
+		return array_filter($items, function($item) use($is_enrolled) {
 			if(isset($item['require_enrolment']) && $item['require_enrolment']) {
-				return $is_See More;
+				return $is_enrolled;
 			}
 			return true;
 		});
@@ -1110,17 +1110,17 @@ class Course extends Tutor_Base {
      * @param $html
      * @return string
      *
-     * Removed course price if already See More at single course
+     * Removed course price if already enrolled at single course
      *
      * @since v.1.5.8
      */
-	public function remove_price_if_See More($html){
-	    $should_removed = apply_filters('should_remove_price_if_See More', true);
+	public function remove_price_if_enrolled($html){
+	    $should_removed = apply_filters('should_remove_price_if_enrolled', true);
 
 	    if ($should_removed){
             $course_id = get_the_ID();
-	        $See More = tutor_utils()->is_See More($course_id);
-	        if ($See More){
+	        $enrolled = tutor_utils()->is_enrolled($course_id);
+	        if ($enrolled){
 	            $html = '';
             }
         }
@@ -1319,7 +1319,7 @@ class Course extends Tutor_Base {
 					wp_delete_post( $topic_id, true );
 				}
 			}
-			$child_post_ids = $this->tutor_get_post_ids( array( 'tutor_announcements', 'tutor_See More' ), $post_id );
+			$child_post_ids = $this->tutor_get_post_ids( array( 'tutor_announcements', 'tutor_enrolled' ), $post_id );
 			if ( ! empty( $child_post_ids ) ) {
 				foreach ( $child_post_ids as $child_post_id ) {
 					wp_delete_post( $child_post_id, true );
@@ -1343,7 +1343,7 @@ class Course extends Tutor_Base {
 			FROM
 				{$wpdb->postmeta}
 			WHERE
-				meta_key='_tutor_See More_by_order_id'
+				meta_key='_tutor_enrolled_by_order_id'
 				AND meta_value = %d
 			",
 				$post_id
@@ -1363,7 +1363,7 @@ class Course extends Tutor_Base {
 		tutor_utils()->checking_nonce();
 		$course_id = tutor_utils()->array_get('course_id', $_POST);
 
-		if ( ! $course_id || ! is_numeric( $course_id ) || ! tutor_utils()->is_See More( $course_id ) ) {
+		if ( ! $course_id || ! is_numeric( $course_id ) || ! tutor_utils()->is_enrolled( $course_id ) ) {
 			wp_send_json_error( array( 'message' => __( 'Invalid Course ID or Access Denied.', 'tutor' ) ) );
 			return;
 		}

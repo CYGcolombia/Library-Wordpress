@@ -600,7 +600,7 @@ final class Tutor {
 				),
 			'email_to_instructors'              =>
 				array(
-					'a_student_See More_in_course' => '1',
+					'a_student_enrolled_in_course' => '1',
 					'a_student_completed_course'   => '1',
 					'a_student_completed_lesson'   => '1',
 					'a_student_placed_question'    => '1',

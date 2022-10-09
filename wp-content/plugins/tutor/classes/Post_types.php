@@ -29,7 +29,7 @@ class Post_types{
 		/**
 		 * Since 1.4.0
 		 */
-		add_action( 'init', array( $this, 'register_tutor_See More_post_types' ) );
+		add_action( 'init', array( $this, 'register_tutor_enrolled_post_types' ) );
 
 		/**
 		 * Remove tutor course post type from admin menu
@@ -387,12 +387,12 @@ class Post_types{
 	}
 
 	/**
-	 * Register tutor_See More post type
+	 * Register tutor_enrolled post type
 	 * @since v.1.4.0
 	 */
-	public function register_tutor_See More_post_types(){
+	public function register_tutor_enrolled_post_types(){
 		$args = array(
-			'label'  => 'Tutor See More',
+			'label'  => 'Tutor Enrolled',
 			'description'        => __( 'Description.', 'tutor' ),
 			'public'             => false,
 			'publicly_queryable' => false,
@@ -402,7 +402,7 @@ class Post_types{
 			'hierarchical'       => false,
 			'menu_position'      => null,
 		);
-		register_post_type( 'tutor_See More', $args );
+		register_post_type( 'tutor_enrolled', $args );
 	}
 
 	/**

@@ -6,3 +6,20 @@
             LEFT JOIN wp_gamipress_user_earnings_meta uem ON ( uem.user_earning_id = ue.user_earning_id AND uem.meta_key = '_gamipress_parent_post_type'  ) 
             WHERE ue.post_type IN ( 'points-award', 'points-deduct', 'step', 'rank-requirement' ) 
             AND uem.meta_value IS NULL realizada por require_once('wp-admin/admin.php'), do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, gamipress_process_upgrades, apply_filters('gamipress_process_upgrades'), WP_Hook->apply_filters, gamipress_237_upgrades, gamipress_237_upgrade_size
+[29-Aug-2022 20:22:50 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[29-Aug-2022 20:23:39 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[29-Aug-2022 21:15:48 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:09:03 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:11:11 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:13:12 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:17:31 UTC] PHP Warning:  Attempt to read property "ID" on array in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/skillate-core/skillate-core.php on line 284
+[31-Aug-2022 14:17:31 UTC] PHP Warning:  Attempt to read property "ID" on array in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/skillate-core/skillate-core.php on line 285
+[31-Aug-2022 14:17:31 UTC] PHP Warning:  Attempt to read property "ID" on array in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/skillate-core/skillate-core.php on line 286
+[31-Aug-2022 14:18:37 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:18:53 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:19:05 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:19:21 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:19:27 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:21:24 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:22:00 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306
+[31-Aug-2022 14:22:56 UTC] PHP Warning:  Undefined array key "email_footer_text" in /home/cygcrjxp/public_html/wordpress/wp-content/plugins/tutor/classes/Options_V2.php on line 306

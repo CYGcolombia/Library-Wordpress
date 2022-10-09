@@ -79,7 +79,7 @@ $results            = tutor_utils()->get_courses_by_instructor($current_user_id,
                 $id_string_delete = 'tutor_my_courses_delete_' . $post->ID;
                 $row_id = 'tutor-dashboard-my-course-' . $post->ID;
                 $course_duration = get_tutor_course_duration_context($post->ID, true);
-                $course_students = tutor_utils()->count_See More_users_by_course();
+                $course_students = tutor_utils()->count_enrolled_users_by_course();
                 ?>
 
                 <div id="<?php echo $row_id; ?>" class="tutor-card tutor-course-card tutor-mycourse-<?php the_ID(); ?>">

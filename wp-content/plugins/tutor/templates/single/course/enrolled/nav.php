@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying See More course view nav menu
+ * Template for displaying enrolled course view nav menu
  *
  * @since v.1.0.0
  *
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<?php do_action('tutor_course/single/See More/nav/before'); ?>
+<?php do_action('tutor_course/single/enrolled/nav/before'); ?>
 <nav class="tutor-nav" tutor-priority-nav>
 	<?php
 		foreach ( $course_nav_item as $nav_key => $nav_item ) {
@@ -38,4 +38,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<ul class="tutor-nav-more-list tutor-dropdown"></ul>
 	</li>
 </nav>
-<?php do_action('tutor_course/single/See More/nav/after'); ?>
+<?php do_action('tutor_course/single/enrolled/nav/after'); ?>

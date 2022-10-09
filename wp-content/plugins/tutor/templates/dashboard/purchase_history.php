@@ -148,7 +148,7 @@ $monetize_by  = tutor_utils()->get_option( 'monetize_by' );
 
                             <td>
                                 <?php
-                                    $courses = tutor_utils()->get_course_See More_ids_by_order_id( $order->ID );
+                                    $courses = tutor_utils()->get_course_enrolled_ids_by_order_id( $order->ID );
                                     if ( tutor_utils()->count( $courses ) ) {
                                         foreach ( $courses as $course ) {
                                             echo '<div>' . esc_html( get_the_title( $course['course_id'] ) ) . '</div>';

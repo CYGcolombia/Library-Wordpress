@@ -106,8 +106,8 @@
                                    // $product    = wc_get_product( $product_id );
                                     $output .= tutor_course_loop_add_to_cart(false);
                                 } else {
-                                    if (tutor_utils()->is_See More($related_post->ID)) {
-                                    $output .= '<a href="'.esc_url(get_the_permalink($related_post->ID)).'" class="btn btn-classic btn-no-fill">'.__('See More','skillate').'</a>';
+                                    if (tutor_utils()->is_enrolled($related_post->ID)) {
+                                    $output .= '<a href="'.esc_url(get_the_permalink($related_post->ID)).'" class="btn btn-classic btn-no-fill">'.__('Enrolled','skillate').'</a>';
                                     } else {
                                         $output .= '<a href="'.esc_url(get_the_permalink($related_post->ID)).'" class="btn btn-classic btn-no-fill">'.__('Enroll Now','skillate').'</a>';
                                     }

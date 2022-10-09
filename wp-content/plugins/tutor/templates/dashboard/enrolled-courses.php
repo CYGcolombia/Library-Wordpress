@@ -14,26 +14,26 @@ $paged    = (isset($_GET['current_page']) && is_numeric($_GET['current_page']) &
 $offset     = ($per_page * $paged) - $per_page;
 
 $page_tabs = array(
-	'See More-courses'                   => __('See More Courses', 'tutor'),
-	'See More-courses/active-courses'    => __('Active Courses', 'tutor'),
-	'See More-courses/completed-courses' => __('Completed Courses', 'tutor'),
+	'enrolled-courses'                   => __('Enrolled Courses', 'tutor'),
+	'enrolled-courses/active-courses'    => __('Active Courses', 'tutor'),
+	'enrolled-courses/completed-courses' => __('Completed Courses', 'tutor'),
 );
 
 // Default tab set
-(!isset($active_tab, $page_tabs[$active_tab])) ? $active_tab = 'See More-courses' : 0;
+(!isset($active_tab, $page_tabs[$active_tab])) ? $active_tab = 'enrolled-courses' : 0;
 
 // Get Paginated course list
 $courses_list_array = array(
-	'See More-courses'                   => tutor_utils()->get_See More_courses_by_user(get_current_user_id(), array('private', 'publish'), $offset, $per_page),
-	'See More-courses/active-courses'    => tutor_utils()->get_active_courses_by_user(null, $offset, $per_page),
-	'See More-courses/completed-courses' => tutor_utils()->get_courses_by_user(null, $offset, $per_page),
+	'enrolled-courses'                   => tutor_utils()->get_enrolled_courses_by_user(get_current_user_id(), array('private', 'publish'), $offset, $per_page),
+	'enrolled-courses/active-courses'    => tutor_utils()->get_active_courses_by_user(null, $offset, $per_page),
+	'enrolled-courses/completed-courses' => tutor_utils()->get_courses_by_user(null, $offset, $per_page),
 );
 
 // Get Full course list
 $full_courses_list_array = array(
-	'See More-courses'                   => tutor_utils()->get_See More_courses_by_user(get_current_user_id(), array('private', 'publish')),
-	'See More-courses/active-courses'    => tutor_utils()->get_active_courses_by_user(),
-	'See More-courses/completed-courses' => tutor_utils()->get_courses_by_user(),
+	'enrolled-courses'                   => tutor_utils()->get_enrolled_courses_by_user(get_current_user_id(), array('private', 'publish')),
+	'enrolled-courses/active-courses'    => tutor_utils()->get_active_courses_by_user(),
+	'enrolled-courses/completed-courses' => tutor_utils()->get_courses_by_user(),
 );
 
 
@@ -44,7 +44,7 @@ $paginated_courses_list =  $full_courses_list_array[$active_tab];
 ?>
 
 <div class="tutor-fs-5 tutor-fw-medium tutor-color-black tutor-mb-16 tutor-capitalize-text"><?php esc_html_e($page_tabs[$active_tab]); ?></div>
-<div class="tutor-dashboard-content-inner See More-courses">
+<div class="tutor-dashboard-content-inner enrolled-courses">
 	<div class="tutor-mb-32">
 		<ul class="tutor-nav" tutor-priority-nav>
 			<?php foreach ($page_tabs as $slug => $tab) : ?>
@@ -88,7 +88,7 @@ $paginated_courses_list =  $full_courses_list_array[$active_tab];
 					</div>
 					
 					<div class="tutor-mt-auto">
-						<?php tutor_load_template( 'loop.See More-course-progress' ); ?>
+						<?php tutor_load_template( 'loop.enrolled-course-progress' ); ?>
 					</div>
 
 					<div class="tutor-mt-24">

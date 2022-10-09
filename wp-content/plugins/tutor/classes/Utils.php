@@ -1077,19 +1077,19 @@ class Utils {
 	 *
 	 * @return array|bool|null|object
 	 *
-	 * Check if current user has been See More or not
+	 * Check if current user has been enrolled or not
 	 *
 	 * @since v.1.0.0
 	 */
-	public function is_See More( $course_id = 0, $user_id = 0 ) {
+	public function is_enrolled( $course_id = 0, $user_id = 0 ) {
 		$course_id = $this->get_post_id( $course_id );
 		$user_id   = $this->get_user_id( $user_id );
 
 		global $wpdb;
 
-		do_action( 'tutor_is_See More_before', $course_id, $user_id );
+		do_action( 'tutor_is_enrolled_before', $course_id, $user_id );
 
-		$getSee MoreInfo = $wpdb->get_row(
+		$getEnrolledInfo = $wpdb->get_row(
 			$wpdb->prepare(
 				"SELECT ID,
 					post_author,
@@ -1104,15 +1104,15 @@ class Utils {
 					AND post_author = %d
 					AND post_status = %s;
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				$course_id,
 				$user_id,
 				'completed'
 			)
 		);
 
-		if ( $getSee MoreInfo ) {
-			return apply_filters( 'tutor_is_See More', $getSee MoreInfo, $course_id, $user_id );
+		if ( $getEnrolledInfo ) {
+			return apply_filters( 'tutor_is_enrolled', $getEnrolledInfo, $course_id, $user_id );
 		}
 		
 		return false;
@@ -1171,18 +1171,18 @@ class Utils {
 	 *
 	 * @return array|bool|null|object|void
 	 *
-	 * Has any See More for a user in a course
+	 * Has any enrolled for a user in a course
 	 *
 	 * @since v.1.0.0
 	 */
-	public function has_any_See More( $course_id = 0, $user_id = 0 ) {
+	public function has_any_enrolled( $course_id = 0, $user_id = 0 ) {
 		$course_id = $this->get_post_id( $course_id );
 		$user_id   = $this->get_user_id( $user_id );
 
 		if ( is_user_logged_in() ) {
 			global $wpdb;
 
-			$getSee MoreInfo = $wpdb->get_row(
+			$getEnrolledInfo = $wpdb->get_row(
 				$wpdb->prepare(
 					"SELECT ID,
 						post_author,
@@ -1194,14 +1194,14 @@ class Utils {
 						AND post_parent = %d
 						AND post_author = %d;
 				",
-					'tutor_See More',
+					'tutor_enrolled',
 					$course_id,
 					$user_id
 				)
 			);
 
-			if ( $getSee MoreInfo ) {
-				return $getSee MoreInfo;
+			if ( $getEnrolledInfo ) {
+				return $getEnrolledInfo;
 			}
 		}
 
@@ -1231,7 +1231,7 @@ class Utils {
 			WHERE	post_type = %s
 					AND ID = %d
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				$enrol_id
 			)
 		);
@@ -1249,16 +1249,16 @@ class Utils {
 	 *
 	 * @return array|bool|null|object
 	 *
-	 * Get the course See More confirmation by lesson ID
+	 * Get the course Enrolled confirmation by lesson ID
 	 *
 	 * @since v.1.0.0
 	 */
-	public function is_course_See More_by_lesson( $lesson_id = 0, $user_id = 0 ) {
+	public function is_course_enrolled_by_lesson( $lesson_id = 0, $user_id = 0 ) {
 		$lesson_id = $this->get_post_id( $lesson_id );
 		$user_id   = $this->get_user_id( $user_id );
 		$course_id = $this->get_course_id_by( 'lesson', $lesson_id );
 
-		return $this->is_See More( $course_id );
+		return $this->is_enrolled( $course_id );
 	}
 
 	/**
@@ -1807,7 +1807,7 @@ class Utils {
 	 * @return array|null|object
 	 *
 	 *
-	 * Get the See More students for all courses.
+	 * Get the enrolled students for all courses.
 	 *
 	 * Pass course id in 4th parameter to get students course wise.
 	 *
@@ -1850,7 +1850,7 @@ class Utils {
 				{$order_query}
 				LIMIT %d, %d
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$search_term,
 				$search_term_raw,
@@ -1904,7 +1904,7 @@ class Utils {
 					AND (user.display_name LIKE %s OR user.user_email = %s OR user.user_login LIKE %s)
 				GROUP BY user.ID
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$search_term,
 				$search_term_raw,
@@ -1943,7 +1943,7 @@ class Utils {
 				'TutorLMSPlugin',
 				'course_completed',
 				$user_id,
-				'tutor_See More',
+				'tutor_enrolled',
 				$user_id
 			)
 		);
@@ -1992,8 +1992,8 @@ class Utils {
 	public function get_active_courses_by_user( $user_id = 0, $offset = 0, $posts_per_page = -1 ) {
 		$user_id             = $this->get_user_id( $user_id );
 		$course_ids          = $this->get_completed_courses_ids_by_user( $user_id );
-		$See More_course_ids = $this->get_See More_courses_ids_by_user( $user_id );
-		$active_courses      = array_diff( $See More_course_ids, $course_ids );
+		$enrolled_course_ids = $this->get_enrolled_courses_ids_by_user( $user_id );
+		$active_courses      = array_diff( $enrolled_course_ids, $course_ids );
 
 		if ( count( $active_courses ) ) {
 			$course_post_type = tutor()->course_post_type;
@@ -2016,11 +2016,11 @@ class Utils {
 	 *
 	 * @return array
 	 *
-	 * Get See More course ids by a user
+	 * Get enrolled course ids by a user
 	 *
 	 * @since v.1.0.0
 	 */
-	public function get_See More_courses_ids_by_user( $user_id = 0 ) {
+	public function get_enrolled_courses_ids_by_user( $user_id = 0 ) {
 		global $wpdb;
 		$user_id    = $this->get_user_id( $user_id );
 		$course_ids = $wpdb->get_col(
@@ -2032,7 +2032,7 @@ class Utils {
 					AND post_author = %d
 				ORDER BY post_date DESC;
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$user_id
 			)
@@ -2042,7 +2042,7 @@ class Utils {
 	}
 
 	/**
-	 * Get single or list of See More course data by a user
+	 * Get single or list of enrolled course data by a user
 	 *
 	 * @param integer $user_id user id
 	 * @param integer $course_id cousrs id
@@ -2050,7 +2050,7 @@ class Utils {
 	 * 
 	 * @since 2.0.5
 	 */
-	public function get_See More_data( $user_id = 0, $course_id = 0 ) {
+	public function get_enrolled_data( $user_id = 0, $course_id = 0 ) {
 		global $wpdb;
 		// If course ID provided, it will return single row data.
 		if( 0 != $course_id ) {
@@ -2061,21 +2061,21 @@ class Utils {
 						AND post_parent = %d
 						AND post_status = %s
 						AND post_author = %d;",
-					'tutor_See More',
+					'tutor_enrolled',
 					$course_id,
 					'completed',
 					$user_id
 				)
 			);
 		} else {
-			// Return all See More data by user ID.
+			// Return all enrolled data by user ID.
 			return	$wpdb->get_results(
 				$wpdb->prepare(
 					"SELECT * FROM 	{$wpdb->posts} 
 						WHERE post_type = %s
 						AND post_status = %s
 						AND post_author = %d;",
-					'tutor_See More',
+					'tutor_enrolled',
 					'completed',
 					$user_id
 				)
@@ -2084,7 +2084,7 @@ class Utils {
 	}
 
 	/**
-	 * Get total See More students by course id
+	 * Get total enrolled students by course id
 	 *
 	 * @param int                                    $course_id
 	 *
@@ -2094,7 +2094,7 @@ class Utils {
 	 *
 	 * @since 1.9.9
 	 */
-	public function count_See More_users_by_course( $course_id = 0, $period = '' ) {
+	public function count_enrolled_users_by_course( $course_id = 0, $period = '' ) {
 		global $wpdb;
 
 		$course_id = $this->get_post_id( $course_id );
@@ -2119,7 +2119,7 @@ class Utils {
 					AND post_parent = %d;
 					{$period_filter}
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$course_id
 			)
@@ -2133,13 +2133,13 @@ class Utils {
 	 *
 	 * @return bool|\WP_Query
 	 *
-	 * Get the See More courses by user
+	 * Get the enrolled courses by user
 	 */
-	public function get_See More_courses_by_user( $user_id = 0, $post_status = 'publish', $offset = 0, $posts_per_page = -1 ) {
+	public function get_enrolled_courses_by_user( $user_id = 0, $post_status = 'publish', $offset = 0, $posts_per_page = -1 ) {
 		global $wpdb;
 
 		$user_id    = $this->get_user_id( $user_id );
-		$course_ids = array_unique( $this->get_See More_courses_ids_by_user( $user_id ) );
+		$course_ids = array_unique( $this->get_enrolled_courses_ids_by_user( $user_id ) );
 
 		if ( count( $course_ids ) ) {
 			$course_post_type = tutor()->course_post_type;
@@ -2340,8 +2340,8 @@ class Utils {
 	 * @param int $user_id
 	 *
 	 * Saving enroll information to posts table
-	 * post_author = See More_student_id (wp_users id)
-	 * post_parent = See More course id
+	 * post_author = enrolled_student_id (wp_users id)
+	 * post_parent = enrolled course id
 	 *
 	 * @type: call when need
 	 * @return bool;
@@ -2358,10 +2358,10 @@ class Utils {
 
 		do_action( 'tutor_before_enroll', $course_id );
 		$user_id = $this->get_user_id( $user_id );
-		$title   = __( 'Course See More', 'tutor' ) . ' &ndash; ' . date( get_option( 'date_format' ) ) . ' @ ' . date( get_option( 'time_format' ) );
+		$title   = __( 'Course Enrolled', 'tutor' ) . ' &ndash; ' . date( get_option( 'date_format' ) ) . ' @ ' . date( get_option( 'time_format' ) );
 
 		if ( $course_id && $user_id ) {
-			if ( $this->is_See More( $course_id, $user_id ) ) {
+			if ( $this->is_enrolled( $course_id, $user_id ) ) {
 				return;
 			}
 		}
@@ -2378,7 +2378,7 @@ class Utils {
 		$enroll_data = apply_filters(
 			'tutor_enroll_data',
 			array(
-				'post_type'   => 'tutor_See More',
+				'post_type'   => 'tutor_enrolled',
 				'post_title'  => $title,
 				'post_status' => $enrolment_status,
 				'post_author' => $user_id,
@@ -2387,15 +2387,15 @@ class Utils {
 		);
 
 		// Insert the post into the database
-		$isSee More = wp_insert_post( $enroll_data );
-		if ( $isSee More ) {
+		$isEnrolled = wp_insert_post( $enroll_data );
+		if ( $isEnrolled ) {
 
 			// Run this hook for both of pending and completed enrolment
-			do_action( 'tutor_after_enroll', $course_id, $isSee More );
+			do_action( 'tutor_after_enroll', $course_id, $isEnrolled );
 
 			// Run this hook for completed enrolment regardless of payment provider and free/paid mode
 			if ( $enroll_data['post_status'] == 'completed' ) {
-				do_action( 'tutor_after_See More', $course_id, $user_id, $isSee More );
+				do_action( 'tutor_after_enrolled', $course_id, $user_id, $isEnrolled );
 			}
 
 			// Mark Current User as Students with user meta data
@@ -2404,10 +2404,10 @@ class Utils {
 			if ( $order_id ) {
 				// Mark order for course and user
 				$product_id = $this->get_course_product_id( $course_id );
-				update_post_meta( $isSee More, '_tutor_See More_by_order_id', $order_id );
-				update_post_meta( $isSee More, '_tutor_See More_by_product_id', $product_id );
+				update_post_meta( $isEnrolled, '_tutor_enrolled_by_order_id', $order_id );
+				update_post_meta( $isEnrolled, '_tutor_enrolled_by_product_id', $product_id );
 				update_post_meta( $order_id, '_is_tutor_order_for_course', tutor_time() );
-				update_post_meta( $order_id, '_tutor_order_for_course_id_' . $course_id, $isSee More );
+				update_post_meta( $order_id, '_tutor_order_for_course_id_' . $course_id, $isEnrolled );
 			}
 			return true;
 		}
@@ -2443,26 +2443,26 @@ class Utils {
 	public function cancel_course_enrol( $course_id = 0, $user_id = 0, $cancel_status = 'canceled' ) {
 		$course_id = $this->get_post_id( $course_id );
 		$user_id   = $this->get_user_id( $user_id );
-		$See More  = $this->is_See More( $course_id, $user_id );
+		$enrolled  = $this->is_enrolled( $course_id, $user_id );
 
-		if ( $See More ) {
+		if ( $enrolled ) {
 			global $wpdb;
 
 			if ( $cancel_status === 'delete' ) {
 				$wpdb->delete(
 					$wpdb->posts,
 					array(
-						'post_type'   => 'tutor_See More',
+						'post_type'   => 'tutor_enrolled',
 						'post_author' => $user_id,
 						'post_parent' => $course_id,
 					)
 				);
 
 				// Delete Related Meta Data
-				delete_post_meta( $See More->ID, '_tutor_See More_by_product_id' );
-				$order_id = get_post_meta( $See More->ID, '_tutor_See More_by_order_id', true );
+				delete_post_meta( $enrolled->ID, '_tutor_enrolled_by_product_id' );
+				$order_id = get_post_meta( $enrolled->ID, '_tutor_enrolled_by_order_id', true );
 				if ( $order_id ) {
-					delete_post_meta( $See More->ID, '_tutor_See More_by_order_id' );
+					delete_post_meta( $enrolled->ID, '_tutor_enrolled_by_order_id' );
 					delete_post_meta( $order_id, '_is_tutor_order_for_course' );
 					delete_post_meta( $order_id, '_tutor_order_for_course_id_' . $course_id );
 				}
@@ -2471,7 +2471,7 @@ class Utils {
 					$wpdb->posts,
 					array( 'post_status' => $cancel_status ),
 					array(
-						'post_type'   => 'tutor_See More',
+						'post_type'   => 'tutor_enrolled',
 						'post_author' => $user_id,
 						'post_parent' => $course_id,
 					)
@@ -2498,13 +2498,13 @@ class Utils {
 
 		global $wpdb;
 
-		$See More_ids_with_course = $this->get_course_See More_ids_by_order_id( $order_id );
-		if ( $See More_ids_with_course ) {
-			$See More_ids = wp_list_pluck( $See More_ids_with_course, 'See More_id' );
+		$enrolled_ids_with_course = $this->get_course_enrolled_ids_by_order_id( $order_id );
+		if ( $enrolled_ids_with_course ) {
+			$enrolled_ids = wp_list_pluck( $enrolled_ids_with_course, 'enrolled_id' );
 
-			if ( is_array( $See More_ids ) && count( $See More_ids ) ) {
-				foreach ( $See More_ids as $See More_id ) {
-					$wpdb->update( $wpdb->posts, array( 'post_status' => 'completed' ), array( 'ID' => $See More_id ) );
+			if ( is_array( $enrolled_ids ) && count( $enrolled_ids ) ) {
+				foreach ( $enrolled_ids as $enrolled_id ) {
+					$wpdb->update( $wpdb->posts, array( 'post_status' => 'completed' ), array( 'ID' => $enrolled_id ) );
 				}
 			}
 		}
@@ -2517,7 +2517,7 @@ class Utils {
 	 *
 	 * @since v.1.0.0
 	 */
-	public function get_course_See More_ids_by_order_id( $order_id ) {
+	public function get_course_enrolled_ids_by_order_id( $order_id ) {
 		global $wpdb;
 
 		// Getting all of courses ids within this order
@@ -2533,16 +2533,16 @@ class Utils {
 		);
 
 		if ( is_array( $courses_ids ) && count( $courses_ids ) ) {
-			$course_See More_by_order = array();
+			$course_enrolled_by_order = array();
 			foreach ( $courses_ids as $courses_id ) {
 				$course_id                  = str_replace( '_tutor_order_for_course_id_', '', $courses_id->meta_key );
-				$course_See More_by_order[] = array(
+				$course_enrolled_by_order[] = array(
 					'course_id'   => $course_id,
-					'See More_id' => $courses_id->meta_value,
+					'enrolled_id' => $courses_id->meta_value,
 					'order_id'    => $courses_id->post_id,
 				);
 			}
-			return $course_See More_by_order;
+			return $course_enrolled_by_order;
 		}
 		return false;
 	}
@@ -2664,9 +2664,9 @@ class Utils {
 	 *
 	 * @since v.1.0.0
 	 */
-	public function get_See More_statuses() {
+	public function get_enrolled_statuses() {
 		return apply_filters(
-			'tutor_get_See More_statuses',
+			'tutor_get_enrolled_statuses',
 			array(
 				'pending',
 				'processing',
@@ -3162,7 +3162,7 @@ class Utils {
 	 * @param $instructor_id
 	 *
 	 * Get total Students by instructor
-	 * 1 enrolment = 1 student, so total See More for a equivalent total students (Tricks)
+	 * 1 enrolment = 1 student, so total enrolled for a equivalent total students (Tricks)
 	 *
 	 * @return int
 	 *
@@ -3188,7 +3188,7 @@ class Utils {
 				$instructor_id,
 				$course_post_type,
 				'publish',
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed'
 			)
 		);
@@ -3286,7 +3286,7 @@ class Utils {
 			",
 				$course_post_type,
 				'publish',
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$search_query,
 				$search_query,
@@ -3318,7 +3318,7 @@ class Utils {
 			",
 				$course_post_type,
 				'publish',
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$search_query,
 				$search_query,
@@ -3364,7 +3364,7 @@ class Utils {
 				$instructor_id,
 				$course_post_type,
 				'publish',
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				$student_id
 			)
@@ -5854,21 +5854,21 @@ class Utils {
 
 		$courses = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT COUNT(See More.ID) AS total_See More,
-					See More.post_parent as course_id,
+				"SELECT COUNT(enrolled.ID) AS total_enrolled,
+					enrolled.post_parent as course_id,
 					course.*
-			FROM 	{$wpdb->posts} See More
+			FROM 	{$wpdb->posts} enrolled
 					INNER JOIN {$wpdb->posts} course
-							ON See More.post_parent = course.ID
-			WHERE 	See More.post_type = %s
-					AND See More.post_status = %s
+							ON enrolled.post_parent = course.ID
+			WHERE 	enrolled.post_type = %s
+					AND enrolled.post_status = %s
 					AND course.post_type = %s
 					{$author_query}
 			GROUP BY course_id
-			ORDER BY total_See More DESC
+			ORDER BY total_enrolled DESC
 			LIMIT 0, %d;
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				'completed',
 				tutor()->course_post_type,
 				$limit
@@ -7089,7 +7089,7 @@ class Utils {
 					{$date_query}
 					AND ( enrol.ID LIKE %s OR student.display_name LIKE %s OR student.user_email = %s OR course.post_title LIKE %s );
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				$search_term,
 				$search_term,
 				$search_term_raw,
@@ -7162,7 +7162,7 @@ class Utils {
 			ORDER BY enrol_id {$order}
 			LIMIT 	%d, %d;
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				$search_term,
 				$search_term,
 				$search_term_raw,
@@ -7719,7 +7719,7 @@ class Utils {
 					AND enrol.post_parent = %d
 					AND enrol.post_status = %s;
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				$course_id,
 				'completed'
 			)
@@ -7745,7 +7745,7 @@ class Utils {
 					AND enrol.post_parent = %d
 					AND enrol.post_status = %s;
 			",
-				'tutor_See More',
+				'tutor_enrolled',
 				$course_id,
 				'completed'
 			)
@@ -8089,14 +8089,14 @@ class Utils {
 	 *
 	 * Check if user has access for content like lesson, quiz, assignment etc.
 	 */
-	public function has_See More_content_access( $content, $object_id = 0, $user_id = 0 ) {
+	public function has_enrolled_content_access( $content, $object_id = 0, $user_id = 0 ) {
 		$user_id               = $this->get_user_id( $user_id );
 		$object_id             = $this->get_post_id( $object_id );
 		$course_id             = $this->get_course_id_by( $content, $object_id );
 
 		do_action( 'tutor_before_enrolment_check', $course_id, $user_id );
 
-		if ( $this->is_See More( $course_id, $user_id ) || $this->has_user_course_content_access($user_id, $course_id)) {
+		if ( $this->is_enrolled( $course_id, $user_id ) || $this->has_user_course_content_access($user_id, $course_id)) {
 			return true;
 		}
 
@@ -8325,18 +8325,18 @@ class Utils {
 	 */
 	public function is_course_fully_booked( $course_id = 0 ) {
 
-		$total_See More   = $this->count_See More_users_by_course( $course_id );
+		$total_enrolled   = $this->count_enrolled_users_by_course( $course_id );
 		$maximum_students = (int) $this->get_course_settings( $course_id, 'maximum_students' );
 
-		return $maximum_students && $maximum_students <= $total_See More;
+		return $maximum_students && $maximum_students <= $total_enrolled;
 	}
 
 	function is_course_booked( $course_id = 0 ) {
 
-		$total_See More   = $this->count_See More_users_by_course( $course_id );
+		$total_enrolled   = $this->count_enrolled_users_by_course( $course_id );
 		$maximum_students = (int) $this->get_course_settings( $course_id, 'maximum_students' );
 
-		$total_booked = 100 / $maximum_students * $total_See More;
+		$total_booked = 100 / $maximum_students * $total_enrolled;
 
 		return $total_booked;
 	}
@@ -8544,13 +8544,13 @@ class Utils {
 	 */
 	public function course_with_materials(): array {
 		$user_id          = get_current_user_id();
-		$See More_courses = $this->get_See More_courses_by_user( $user_id );
+		$enrolled_courses = $this->get_enrolled_courses_by_user( $user_id );
 
-		if ( false === $See More_courses ) {
+		if ( false === $enrolled_courses ) {
 			return array();
 		}
 		$data = array();
-		foreach ( $See More_courses->posts as $key => $course ) {
+		foreach ( $enrolled_courses->posts as $key => $course ) {
 			// push courses
 			array_push( $data, array( 'course' => array( 'title' => $course->post_title ) ) );
 			$topics = $this->get_topics( $course->ID );
@@ -9309,8 +9309,8 @@ class Utils {
 				'title' => __( 'My Profile', 'tutor' ),
 				'icon'  => 'tutor-icon-user-bold',
 			),
-			'See More-courses' => array(
-				'title' => __( 'See More Courses', 'tutor' ),
+			'enrolled-courses' => array(
+				'title' => __( 'Enrolled Courses', 'tutor' ),
 				'icon'  => 'tutor-icon-mortarboard-o',
 			),
 			'wishlist'         => array(
@@ -9475,7 +9475,7 @@ class Utils {
 	}
 
 	public function can_user_retake_course(){
-		if(!$this->is_See More()) {
+		if(!$this->is_enrolled()) {
 			return false;
 		}
 
@@ -9622,17 +9622,17 @@ class Utils {
 	}
 
 	/**
-	 * Get total number of See More course
+	 * Get total number of enrolled course
 	 *
 	 * @return int
 	 * @since 2.0.2
 	 */
-	public function get_total_See More_course() {
+	public function get_total_enrolled_course() {
 		global $wpdb;
 		
 		$sql = "SELECT COUNT(DISTINCT enroll.ID)
 		FROM {$wpdb->posts} enroll INNER JOIN {$wpdb->posts} course ON enroll.post_parent=course.ID
-		WHERE enroll.post_type = 'tutor_See More'
+		WHERE enroll.post_type = 'tutor_enrolled'
 		AND enroll.post_status = 'completed'
         AND course.post_type=%s";
 		
@@ -9779,7 +9779,7 @@ class Utils {
 					'tutor_quiz' 		=> array(),
 					'lesson' 			=> array(),
 					'topics' 			=> 0,
-					'tutor_See More' 	=> 0,
+					'tutor_enrolled' 	=> 0,
 				);
 			}
 
@@ -9800,7 +9800,7 @@ class Utils {
 			}
 		}
 
-		$course_meta = $this->assign_child_count($course_meta, 'tutor_See More');
+		$course_meta = $this->assign_child_count($course_meta, 'tutor_enrolled');
 		$course_meta = $this->assign_child_count($course_meta, 'topics');
 		
 		// Return single count if the course id was single
